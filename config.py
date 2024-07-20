@@ -4,4 +4,5 @@ config = {
     "MODELS_PATH": "ComfyUI/models",
     "USER_WEIGHTS_PATH": "downloaded_user_models",
     "USER_WEIGHTS_MANIFEST_PATH": "downloaded_user_models/weights.json",
+    "CUSTOM_WEIGHTS_BASE_URL":"https://pub-c6593539e5e54a94b671581e33081130.r2.dev"
 }

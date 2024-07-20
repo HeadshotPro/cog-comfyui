@@ -2,7 +2,10 @@ import subprocess
 import time
 import os
 from weights_manifest import WeightsManifest
+from config import config
 
+BASE_URL = config["WEIGHTS_BASE_URL"]
+CUSTOM_BASE_URL = config["CUSTOM_WEIGHTS_BASE_URL"]
 
 class WeightsDownloader:
     supported_filetypes = [
@@ -68,9 +71,20 @@ class WeightsDownloader:
 
         print(f"⏳ Downloading {weight_str} to {dest}")
         start = time.time()
-        subprocess.check_call(
-            ["pget", "--log-level", "warn", "-xf", url, dest], close_fds=False
-        )
+        try:
+            subprocess.check_call(
+                ["pget", "--log-level", "warn", "-xf", url, dest], close_fds=False
+            )
+        except:
+            print("File not found on Replicate servers. Trying custom hosting.")
+            file_name = url.split(BASE_URL)[1]
+            url = CUSTOM_BASE_URL + file_name
+            try:
+                subprocess.check_call(
+                    ["pget", "--log-level", "warn", "-xf", url, dest], close_fds=False
+                )
+            except subprocess.CalledProcessError as e:
+                raise RuntimeError(f"Failed to download {weight_str} from both primary and custom hosting.") from e
         elapsed_time = time.time() - start
         try:
             file_size_bytes = os.path.getsize(

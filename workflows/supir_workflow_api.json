@@ -1,0 +1,803 @@
+{
+  "5": {
+    "inputs": {
+      "use_tiled_vae": true,
+      "encoder_tile_size": [
+        "98",
+        1
+      ],
+      "decoder_tile_size": [
+        "98",
+        1
+      ],
+      "encoder_dtype": "auto",
+      "SUPIR_VAE": [
+        "22",
+        1
+      ],
+      "image": [
+        "303",
+        0
+      ]
+    },
+    "class_type": "SUPIR_first_stage",
+    "_meta": {
+      "title": "SUPIR First Stage (Denoiser)"
+    }
+  },
+  "9": {
+    "inputs": {
+      "positive_prompt": "4k, sharp focus, high resolution, detailed skin, detailed eyes, 8k uhd, dslr, high quality, film grain, Fujifilm XT3",
+      "negative_prompt": "bad quality, blurry, messy, wrinkles, old",
+      "SUPIR_model": [
+        "22",
+        0
+      ],
+      "latents": [
+        "5",
+        2
+      ]
+    },
+    "class_type": "SUPIR_conditioner",
+    "_meta": {
+      "title": "SUPIR Conditioner"
+    }
+  },
+  "10": {
+    "inputs": {
+      "use_tiled_vae": true,
+      "decoder_tile_size": [
+        "98",
+        1
+      ],
+      "SUPIR_VAE": [
+        "22",
+        1
+      ],
+      "latents": [
+        "198",
+        0
+      ]
+    },
+    "class_type": "SUPIR_decode",
+    "_meta": {
+      "title": "SUPIR Decode"
+    }
+  },
+  "11": {
+    "inputs": {
+      "use_tiled_vae": true,
+      "encoder_tile_size": [
+        "98",
+        1
+      ],
+      "encoder_dtype": "auto",
+      "SUPIR_VAE": [
+        "5",
+        0
+      ],
+      "image": [
+        "5",
+        1
+      ]
+    },
+    "class_type": "SUPIR_encode",
+    "_meta": {
+      "title": "SUPIR Encode"
+    }
+  },
+  "14": {
+    "inputs": {
+      "method": "hm-mkl-hm",
+      "image_ref": [
+        "303",
+        0
+      ],
+      "image_target": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "ColorMatch",
+    "_meta": {
+      "title": "Color Match"
+    }
+  },
+  "20": {
+    "inputs": {
+      "rgthree_comparer": {
+        "images": [
+          {
+            "name": "A",
+            "selected": true,
+            "url": "/view?filename=rgthree.compare._temp_gcprn_00017_.png&type=temp&subfolder=&rand=0.07235523526444343"
+          },
+          {
+            "name": "B",
+            "selected": true,
+            "url": "/view?filename=rgthree.compare._temp_gcprn_00018_.png&type=temp&subfolder=&rand=0.22533609192169712"
+          }
+        ]
+      },
+      "image_a": [
+        "14",
+        0
+      ],
+      "image_b": [
+        "303",
+        0
+      ]
+    },
+    "class_type": "Image Comparer (rgthree)",
+    "_meta": {
+      "title": "Image Comparer (rgthree)"
+    }
+  },
+  "21": {
+    "inputs": {
+      "ckpt_name": "Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "22": {
+    "inputs": {
+      "supir_model": "SUPIR-v0F_fp16.safetensors",
+      "fp8_unet": false,
+      "diffusion_dtype": "auto",
+      "high_vram": false,
+      "model": [
+        "21",
+        0
+      ],
+      "clip": [
+        "21",
+        1
+      ],
+      "vae": [
+        "21",
+        2
+      ]
+    },
+    "class_type": "SUPIR_model_loader_v2",
+    "_meta": {
+      "title": "SUPIR Model Loader (v2)"
+    }
+  },
+  "36": {
+    "inputs": {
+      "op": "Div",
+      "a": [
+        "303",
+        1
+      ],
+      "b": 2
+    },
+    "class_type": "CM_IntBinaryOperation",
+    "_meta": {
+      "title": "Tile Stride"
+    }
+  },
+  "44": {
+    "inputs": {
+      "image": [
+        "79",
+        0
+      ]
+    },
+    "class_type": "GetImageSize+",
+    "_meta": {
+      "title": "🔧 Get Image Size"
+    }
+  },
+  "45": {
+    "inputs": {
+      "op": "Mul",
+      "a": [
+        "44",
+        0
+      ],
+      "b": [
+        "261",
+        0
+      ]
+    },
+    "class_type": "CM_IntBinaryOperation",
+    "_meta": {
+      "title": "Width Math"
+    }
+  },
+  "46": {
+    "inputs": {
+      "op": "Mul",
+      "a": [
+        "44",
+        1
+      ],
+      "b": [
+        "261",
+        0
+      ]
+    },
+    "class_type": "CM_IntBinaryOperation",
+    "_meta": {
+      "title": "Height Math"
+    }
+  },
+  "48": {
+    "inputs": {
+      "image": "https://storage.googleapis.com/stockai-stock-photos/974e84ba-ebec-48bc-b055-63bafcbf2b66.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "52": {
+    "inputs": {
+      "seed": 919117296619733
+    },
+    "class_type": "Seed (rgthree)",
+    "_meta": {
+      "title": "Seed (rgthree)"
+    }
+  },
+  "65": {
+    "inputs": {
+      "image": [
+        "48",
+        0
+      ]
+    },
+    "class_type": "GetImageSize+",
+    "_meta": {
+      "title": "🔧 Get Image Size"
+    }
+  },
+  "77": {
+    "inputs": {
+      "expression": "a/b",
+      "a": [
+        "65",
+        0
+      ],
+      "b": [
+        "296",
+        0
+      ]
+    },
+    "class_type": "MathExpression|pysssss",
+    "_meta": {
+      "title": "Should be Round Number"
+    }
+  },
+  "78": {
+    "inputs": {
+      "expression": "a/b",
+      "a": [
+        "65",
+        1
+      ],
+      "b": [
+        "296",
+        0
+      ]
+    },
+    "class_type": "MathExpression|pysssss",
+    "_meta": {
+      "title": "Should be Round Number"
+    }
+  },
+  "79": {
+    "inputs": {
+      "select": 2,
+      "sel_mode": true,
+      "input1": [
+        "309",
+        0
+      ],
+      "input2": [
+        "85",
+        0
+      ],
+      "input3": [
+        "307",
+        0
+      ]
+    },
+    "class_type": "ImpactSwitch",
+    "_meta": {
+      "title": "Select Input"
+    }
+  },
+  "82": {
+    "inputs": {
+      "input": [
+        "302",
+        2
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Hieght"
+    }
+  },
+  "83": {
+    "inputs": {
+      "input": [
+        "302",
+        1
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
+    }
+  },
+  "85": {
+    "inputs": {
+      "width": [
+        "302",
+        1
+      ],
+      "height": [
+        "302",
+        2
+      ],
+      "position": "center",
+      "x_offset": 0,
+      "y_offset": 0,
+      "image": [
+        "48",
+        0
+      ]
+    },
+    "class_type": "ImageCrop+",
+    "_meta": {
+      "title": "🔧 Image Crop"
+    }
+  },
+  "86": {
+    "inputs": {
+      "images": [
+        "85",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "98": {
+    "inputs": {
+      "tile_size": [
+        "134",
+        0
+      ],
+      "tile_stride": [
+        "135",
+        0
+      ],
+      "image": [
+        "303",
+        0
+      ]
+    },
+    "class_type": "SUPIR_tiles",
+    "_meta": {
+      "title": "SUPIR Tiles Preview"
+    }
+  },
+  "101": {
+    "inputs": {
+      "images": [
+        "98",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "104": {
+    "inputs": {
+      "input": [
+        "36",
+        0
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
+    }
+  },
+  "110": {
+    "inputs": {
+      "input": [
+        "303",
+        1
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
+    }
+  },
+  "134": {
+    "inputs": {
+      "any_01": [
+        "149",
+        0
+      ]
+    },
+    "class_type": "Any Switch (rgthree)",
+    "_meta": {
+      "title": "Tile Size"
+    }
+  },
+  "135": {
+    "inputs": {
+      "any_01": [
+        "36",
+        0
+      ]
+    },
+    "class_type": "Any Switch (rgthree)",
+    "_meta": {
+      "title": "Tile Stride"
+    }
+  },
+  "148": {
+    "inputs": {
+      "input": [
+        "303",
+        2
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
+    }
+  },
+  "149": {
+    "inputs": {
+      "op": "Div",
+      "a": [
+        "303",
+        1
+      ],
+      "b": 1
+    },
+    "class_type": "CM_IntBinaryOperation",
+    "_meta": {
+      "title": "Tile Size"
+    }
+  },
+  "150": {
+    "inputs": {
+      "input": [
+        "149",
+        0
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
+    }
+  },
+  "198": {
+    "inputs": {
+      "any_03": [
+        "262",
+        0
+      ]
+    },
+    "class_type": "Any Switch (rgthree)",
+    "_meta": {
+      "title": "Sampler Switch"
+    }
+  },
+  "261": {
+    "inputs": {
+      "value": 2
+    },
+    "class_type": "ImpactInt",
+    "_meta": {
+      "title": "Upscale By"
+    }
+  },
+  "262": {
+    "inputs": {
+      "seed": [
+        "52",
+        0
+      ],
+      "steps": 25,
+      "cfg_scale_start": 7,
+      "cfg_scale_end": 7,
+      "EDM_s_churn": 1,
+      "s_noise": 1.0010000000000001,
+      "DPMPP_eta": 0.1,
+      "control_scale_start": 1,
+      "control_scale_end": 1,
+      "restore_cfg": 1,
+      "keep_model_loaded": false,
+      "sampler": "TiledRestoreDPMPP2MSampler",
+      "sampler_tile_size": [
+        "98",
+        1
+      ],
+      "sampler_tile_stride": [
+        "98",
+        2
+      ],
+      "SUPIR_model": [
+        "22",
+        0
+      ],
+      "latents": [
+        "11",
+        0
+      ],
+      "positive": [
+        "9",
+        0
+      ],
+      "negative": [
+        "9",
+        1
+      ]
+    },
+    "class_type": "SUPIR_sample",
+    "_meta": {
+      "title": "SUPIR Sampler"
+    }
+  },
+  "269": {
+    "inputs": {
+      "op": "Div",
+      "a": [
+        "302",
+        2
+      ],
+      "b": [
+        "270",
+        0
+      ]
+    },
+    "class_type": "CM_IntBinaryOperation",
+    "_meta": {
+      "title": "Height Math"
+    }
+  },
+  "270": {
+    "inputs": {
+      "value": 2
+    },
+    "class_type": "ImpactInt",
+    "_meta": {
+      "title": "Downscale By"
+    }
+  },
+  "271": {
+    "inputs": {
+      "op": "Div",
+      "a": [
+        "302",
+        1
+      ],
+      "b": [
+        "270",
+        0
+      ]
+    },
+    "class_type": "CM_IntBinaryOperation",
+    "_meta": {
+      "title": "Width Math"
+    }
+  },
+  "272": {
+    "inputs": {
+      "input": [
+        "65",
+        0
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
+    }
+  },
+  "273": {
+    "inputs": {
+      "input": [
+        "65",
+        1
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
+    }
+  },
+  "280": {
+    "inputs": {
+      "value": 1500
+    },
+    "class_type": "ImpactInt",
+    "_meta": {
+      "title": "Custom"
+    }
+  },
+  "282": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "21",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "283": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "21",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "296": {
+    "inputs": {
+      "value": 32
+    },
+    "class_type": "ImpactInt",
+    "_meta": {
+      "title": "Divide by"
+    }
+  },
+  "302": {
+    "inputs": {
+      "width": [
+        "65",
+        0
+      ],
+      "height": [
+        "65",
+        1
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 32,
+      "image": [
+        "48",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "303": {
+    "inputs": {
+      "width": [
+        "45",
+        0
+      ],
+      "height": [
+        "46",
+        0
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 32,
+      "image": [
+        "79",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "305": {
+    "inputs": {
+      "output_path": "[time(%Y-%m-%d)]",
+      "filename_prefix": "upscaled",
+      "filename_delimiter": "_",
+      "filename_number_padding": 4,
+      "filename_number_start": "false",
+      "extension": "png",
+      "dpi": 300,
+      "quality": 100,
+      "optimize_image": "true",
+      "lossless_webp": "false",
+      "overwrite_mode": "false",
+      "show_history": "false",
+      "show_history_by_prefix": "false",
+      "embed_workflow": "true",
+      "show_previews": "true",
+      "images": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "Image Save",
+    "_meta": {
+      "title": "Image Save"
+    }
+  },
+  "307": {
+    "inputs": {
+      "width": [
+        "280",
+        0
+      ],
+      "height": [
+        "280",
+        0
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 32,
+      "image": [
+        "85",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "309": {
+    "inputs": {
+      "width": [
+        "271",
+        0
+      ],
+      "height": [
+        "269",
+        0
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "85",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  }
+}

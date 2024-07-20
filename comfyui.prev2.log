@@ -1,0 +1,122 @@
+## ComfyUI-Manager: installing dependencies. (GitPython)
+[2024-07-20 06:43] ## ComfyUI-Manager: installing dependencies done.
+[2024-07-20 06:43] ** ComfyUI startup time: 2024-07-20 06:43:40.246742
+[2024-07-20 06:43] ** Platform: Linux
+[2024-07-20 06:43] ** Python version: 3.10.6 (main, Jul 15 2024, 04:15:22) [GCC 11.4.0]
+[2024-07-20 06:43] ** Python executable: /root/.pyenv/versions/3.10.6/bin/python
+[2024-07-20 06:43] ** ComfyUI Path: /src/ComfyUI
+[2024-07-20 06:43] ** Log path: /src/comfyui.log
+[2024-07-20 06:43] 
+Prestartup times for custom nodes:
+[2024-07-20 06:43]    0.0 seconds: /src/ComfyUI/custom_nodes/rgthree-comfy
+[2024-07-20 06:43]    7.0 seconds: /src/ComfyUI/custom_nodes/ComfyUI-Manager
+[2024-07-20 06:43] 
+Total VRAM 22723 MB, total RAM 201298 MB
+[2024-07-20 06:43] pytorch version: 2.3.1+cu121
+[2024-07-20 06:43] Set vram state to: HIGH_VRAM
+[2024-07-20 06:43] Device: cuda:0 NVIDIA A10 : cudaMallocAsync
+[2024-07-20 06:43] Using pytorch cross attention
+[2024-07-20 06:43] ### Loading: ComfyUI-Inspire-Pack (V0.82)
+[2024-07-20 06:43] 
+[2024-07-20 06:43] [92m[rgthree] Loaded 40 epic nodes.[0m
+[2024-07-20 06:43] [92m[rgthree] Will use rgthree's optimized recursive execution.[0m
+[2024-07-20 06:43] 
+[2024-07-20 06:43] /src
+[2024-07-20 06:43] ############################################
+[2024-07-20 06:43] /src/custom_nodes/ComfyUI-NAI-styler/CSV
+[2024-07-20 06:43] ############################################
+[2024-07-20 06:43] []
+[2024-07-20 06:43] ############################################
+[2024-07-20 06:43] generated new fontManager
+[2024-07-20 06:43] ------------------------------------------
+[2024-07-20 06:43] [34mComfyroll Studio v1.76 : [92m 175 Nodes Loaded[0m
+[2024-07-20 06:43] ------------------------------------------
+[2024-07-20 06:43] ** For changes, please see patch notes at https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes/blob/main/Patch_Notes.md
+[2024-07-20 06:43] ** For help, please see the wiki at https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes/wiki
+[2024-07-20 06:43] ------------------------------------------
+[2024-07-20 06:43] Total VRAM 22723 MB, total RAM 201298 MB
+[2024-07-20 06:43] pytorch version: 2.3.1+cu121
+[2024-07-20 06:43] Set vram state to: HIGH_VRAM
+[2024-07-20 06:43] Device: cuda:0 NVIDIA A10 : cudaMallocAsync
+[2024-07-20 06:43] ### Loading: ComfyUI-Impact-Pack (V5.18.13)
+[2024-07-20 06:43] ### Loading: ComfyUI-Impact-Pack (Subpack: V0.6)
+[2024-07-20 06:43] [Impact Pack] Wildcards loading done.
+[2024-07-20 06:43] ### Loading: ComfyUI-Manager (V2.46.3)
+[2024-07-20 06:43] ### ComfyUI Revision: UNKNOWN (The currently installed ComfyUI is not a Git repository)
+[2024-07-20 06:43] [36;20m[comfyui_controlnet_aux] | INFO -> Using ckpts path: /src/ComfyUI/custom_nodes/comfyui_controlnet_aux/ckpts[0m
+[2024-07-20 06:43] [36;20m[comfyui_controlnet_aux] | INFO -> Using symlinks: False[0m
+[2024-07-20 06:43] [36;20m[comfyui_controlnet_aux] | INFO -> Using ort providers: ['CUDAExecutionProvider', 'DirectMLExecutionProvider', 'OpenVINOExecutionProvider', 'ROCMExecutionProvider', 'CPUExecutionProvider', 'CoreMLExecutionProvider'][0m
+[2024-07-20 06:43] DWPose: Onnxruntime with acceleration providers detected
+[2024-07-20 06:43] [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/model-list.json
+[2024-07-20 06:43] [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/alter-list.json
+[2024-07-20 06:43] [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/github-stats.json
+[2024-07-20 06:43] [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json
+[2024-07-20 06:43] [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json
+[2024-07-20 06:43] no module 'xformers'. Processing without...
+[2024-07-20 06:43] no module 'xformers'. Processing without...
+[2024-07-20 06:43] [34mWAS Node Suite: [0mOpenCV Python FFMPEG support is enabled[0m
+[2024-07-20 06:43] [34mWAS Node Suite [93mWarning: [0m`ffmpeg_bin_path` is not set in `/src/ComfyUI/custom_nodes/was-node-suite-comfyui/was_suite_config.json` config file. Will attempt to use system ffmpeg binaries if available.[0m
+[2024-07-20 06:43] [34mWAS Node Suite: [0mFinished.[0m [32mLoaded[0m [0m217[0m [32mnodes successfully.[0m
+[2024-07-20 06:43] 
+	[3m[93m"Success usually comes to those who are too busy to be looking for it."[0m[3m - Henry David Thoreau[0m
+[2024-07-20 06:43] 
+[2024-07-20 06:43] 
+Import times for custom nodes:
+[2024-07-20 06:43]    0.0 seconds: /src/ComfyUI/custom_nodes/ComfyUI-Universal-Styler
+[2024-07-20 06:43]    0.0 seconds: /src/ComfyUI/custom_nodes/ComfyUI-Custom-Scripts
+[2024-07-20 06:43]    0.0 seconds: /src/ComfyUI/custom_nodes/ComfyMath
+[2024-07-20 06:43]    0.0 seconds: /src/ComfyUI/custom_nodes/ComfyUI_UltimateSDUpscale
+[2024-07-20 06:43]    0.0 seconds: /src/ComfyUI/custom_nodes/ComfyUI-Manager
+[2024-07-20 06:43]    0.0 seconds: /src/ComfyUI/custom_nodes/rgthree-comfy
+[2024-07-20 06:43]    0.0 seconds: /src/ComfyUI/custom_nodes/ComfyUI-KJNodes
+[2024-07-20 06:43]    0.0 seconds: /src/ComfyUI/custom_nodes/comfyui_controlnet_aux
+[2024-07-20 06:43]    0.1 seconds: /src/ComfyUI/custom_nodes/ComfyUI_essentials
+[2024-07-20 06:43]    0.1 seconds: /src/ComfyUI/custom_nodes/ComfyUI-Inspire-Pack
+[2024-07-20 06:43]    0.4 seconds: /src/ComfyUI/custom_nodes/ComfyUI-Impact-Pack
+[2024-07-20 06:43]    1.2 seconds: /src/ComfyUI/custom_nodes/ComfyUI_Comfyroll_CustomNodes
+[2024-07-20 06:43]    1.6 seconds: /src/ComfyUI/custom_nodes/was-node-suite-comfyui
+[2024-07-20 06:43]    2.3 seconds: /src/ComfyUI/custom_nodes/ComfyUI-SUPIR
+[2024-07-20 06:43] 
+[2024-07-20 06:43] Setting output directory to: /tmp/outputs
+[2024-07-20 06:43] Setting input directory to: /tmp/inputs
+[2024-07-20 06:43] Starting server
+
+[2024-07-20 06:43] To see the GUI go to: http://127.0.0.1:8188
+[2024-07-20 06:43] got prompt
+[2024-07-20 06:43] Failed to validate prompt for output 434:
+[2024-07-20 06:43] * CheckpointLoaderSimple 314:
+[2024-07-20 06:43]   - Value not in list: ckpt_name: 'realisticVisionV60B1_v40VAE.safetensors' not in ['Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors', 'RealVisXL_V4.0_Lightning.safetensors', 'SUPIR-v0F_fp16.safetensors', 'v1-5-pruned-emaonly.ckpt']
+[2024-07-20 06:43] Output will be ignored
+[2024-07-20 06:43] Failed to validate prompt for output 427:
+[2024-07-20 06:43] Output will be ignored
+[2024-07-20 06:43] Failed to validate prompt for output 422:
+[2024-07-20 06:43] Output will be ignored
+[2024-07-20 06:43] Failed to validate prompt for output 456:
+[2024-07-20 06:43] Output will be ignored
+[2024-07-20 06:43] Failed to validate prompt for output 421:
+[2024-07-20 06:43] Output will be ignored
+[2024-07-20 06:43] Failed to validate prompt for output 433:
+[2024-07-20 06:43] Output will be ignored
+[2024-07-20 06:43] Failed to validate prompt for output 445:
+[2024-07-20 06:43] Output will be ignored
+[2024-07-20 06:43] Failed to validate prompt for output 428:
+[2024-07-20 06:43] Output will be ignored
+[2024-07-20 06:43] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-07-20 06:43] [32m[rgthree][0m First run patching recursive_output_delete_if_changed and recursive_will_execute.[0m
+[2024-07-20 06:43] [33m[rgthree] Note: [0mIf execution seems broken due to forward ComfyUI changes, you can disable the optimization from rgthree settings in ComfyUI.[0m
+[2024-07-20 06:43] torch.Size([2, 1024, 1024, 3])
+[2024-07-20 06:43] len(tiles):  2
+[2024-07-20 06:43] model_type EPS
+[2024-07-20 06:43] Using pytorch attention in VAE
+[2024-07-20 06:43] Using pytorch attention in VAE
+[2024-07-20 06:43] loaded straight to GPU
+[2024-07-20 06:43] Requested to load SDXL
+[2024-07-20 06:43] Loading 1 new model
+[2024-07-20 06:43] Loading weights to:  cuda:0
+[2024-07-20 06:43] Diffusion using fp16
+[2024-07-20 06:43] making attention of type 'vanilla' with 512 in_channels
+[2024-07-20 06:43] Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+[2024-07-20 06:43] making attention of type 'vanilla' with 512 in_channels
+[2024-07-20 06:43] Attempting to load SDXL model from node inputs
+[2024-07-20 06:43] Requested to load SDXL
+[2024-07-20 06:43] Loading 1 new model

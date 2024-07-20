@@ -1,0 +1,1423 @@
+{
+  "5": {
+    "inputs": {
+      "use_tiled_vae": true,
+      "encoder_tile_size": [
+        "98",
+        1
+      ],
+      "decoder_tile_size": [
+        "98",
+        1
+      ],
+      "encoder_dtype": "auto",
+      "SUPIR_VAE": [
+        "22",
+        1
+      ],
+      "image": [
+        "303",
+        0
+      ]
+    },
+    "class_type": "SUPIR_first_stage",
+    "_meta": {
+      "title": "SUPIR First Stage (Denoiser)"
+    }
+  },
+  "9": {
+    "inputs": {
+      "positive_prompt": "Cinematic, High Contrast, highly detailed, taken using a Canon EOS R camera, hyper detailed photo - realistic maximum detail, 32k, Color Grading, ultra HD, extreme meticulous detailing, skin pore detailing, hyper sharpness, perfect without deformations.",
+      "negative_prompt": "painting, oil painting, illustration, drawing, art, sketch, oil painting, cartoon, CG Style, 3D render, unreal engine, blurring, dirty, messy, worst quality, low quality, frames, watermark, signature, jpeg artifacts, deformed, lowres, over-smooth",
+      "SUPIR_model": [
+        "22",
+        0
+      ],
+      "latents": [
+        "5",
+        2
+      ]
+    },
+    "class_type": "SUPIR_conditioner",
+    "_meta": {
+      "title": "SUPIR Conditioner"
+    }
+  },
+  "10": {
+    "inputs": {
+      "use_tiled_vae": true,
+      "decoder_tile_size": [
+        "98",
+        1
+      ],
+      "SUPIR_VAE": [
+        "22",
+        1
+      ],
+      "latents": [
+        "392",
+        0
+      ]
+    },
+    "class_type": "SUPIR_decode",
+    "_meta": {
+      "title": "SUPIR Decode"
+    }
+  },
+  "11": {
+    "inputs": {
+      "use_tiled_vae": true,
+      "encoder_tile_size": [
+        "98",
+        1
+      ],
+      "encoder_dtype": "auto",
+      "SUPIR_VAE": [
+        "5",
+        0
+      ],
+      "image": [
+        "5",
+        1
+      ]
+    },
+    "class_type": "SUPIR_encode",
+    "_meta": {
+      "title": "SUPIR Encode"
+    }
+  },
+  "14": {
+    "inputs": {
+      "method": "hm-mkl-hm",
+      "image_ref": [
+        "303",
+        0
+      ],
+      "image_target": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "ColorMatch",
+    "_meta": {
+      "title": "Color Match"
+    }
+  },
+  "20": {
+    "inputs": {
+      "rgthree_comparer": {
+        "images": [
+          {
+            "name": "A",
+            "selected": true,
+            "url": "/view?filename=rgthree.compare._temp_mkhec_00097_.png&type=temp&subfolder=&rand=0.851695076600758"
+          },
+          {
+            "name": "B",
+            "selected": true,
+            "url": "/view?filename=rgthree.compare._temp_mkhec_00098_.png&type=temp&subfolder=&rand=0.9020301245674032"
+          }
+        ]
+      },
+      "image_a": [
+        "14",
+        0
+      ],
+      "image_b": [
+        "303",
+        0
+      ]
+    },
+    "class_type": "Image Comparer (rgthree)",
+    "_meta": {
+      "title": "Image Comparer (rgthree)"
+    }
+  },
+  "21": {
+    "inputs": {
+      "ckpt_name": "Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "22": {
+    "inputs": {
+      "supir_model": "SUPIR-v0F_fp16.safetensors",
+      "fp8_unet": false,
+      "diffusion_dtype": "auto",
+      "high_vram": false,
+      "model": [
+        "21",
+        0
+      ],
+      "clip": [
+        "21",
+        1
+      ],
+      "vae": [
+        "21",
+        2
+      ]
+    },
+    "class_type": "SUPIR_model_loader_v2",
+    "_meta": {
+      "title": "SUPIR Model Loader (v2)"
+    }
+  },
+  "36": {
+    "inputs": {
+      "op": "Div",
+      "a": [
+        "303",
+        1
+      ],
+      "b": 2
+    },
+    "class_type": "CM_IntBinaryOperation",
+    "_meta": {
+      "title": "Tile Stride"
+    }
+  },
+  "44": {
+    "inputs": {
+      "image": [
+        "85",
+        0
+      ]
+    },
+    "class_type": "GetImageSize+",
+    "_meta": {
+      "title": "🔧 Get Image Size"
+    }
+  },
+  "45": {
+    "inputs": {
+      "op": "Mul",
+      "a": [
+        "44",
+        0
+      ],
+      "b": [
+        "261",
+        0
+      ]
+    },
+    "class_type": "CM_IntBinaryOperation",
+    "_meta": {
+      "title": "Width Math"
+    }
+  },
+  "46": {
+    "inputs": {
+      "op": "Mul",
+      "a": [
+        "44",
+        1
+      ],
+      "b": [
+        "261",
+        0
+      ]
+    },
+    "class_type": "CM_IntBinaryOperation",
+    "_meta": {
+      "title": "Height Math"
+    }
+  },
+  "48": {
+    "inputs": {
+      "image": "input.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "52": {
+    "inputs": {
+      "seed": 637931232007052
+    },
+    "class_type": "Seed (rgthree)",
+    "_meta": {
+      "title": "Seed (rgthree)"
+    }
+  },
+  "65": {
+    "inputs": {
+      "image": [
+        "48",
+        0
+      ]
+    },
+    "class_type": "GetImageSize+",
+    "_meta": {
+      "title": "🔧 Get Image Size"
+    }
+  },
+  "77": {
+    "inputs": {
+      "expression": "a/b",
+      "a": [
+        "65",
+        0
+      ],
+      "b": [
+        "296",
+        0
+      ]
+    },
+    "class_type": "MathExpression|pysssss",
+    "_meta": {
+      "title": "Should be Round Number"
+    }
+  },
+  "78": {
+    "inputs": {
+      "expression": "a/b",
+      "a": [
+        "65",
+        1
+      ],
+      "b": [
+        "296",
+        0
+      ]
+    },
+    "class_type": "MathExpression|pysssss",
+    "_meta": {
+      "title": "Should be Round Number"
+    }
+  },
+  "82": {
+    "inputs": {
+      "input": [
+        "302",
+        2
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Hieght"
+    }
+  },
+  "83": {
+    "inputs": {
+      "input": [
+        "302",
+        1
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
+    }
+  },
+  "85": {
+    "inputs": {
+      "width": [
+        "302",
+        1
+      ],
+      "height": [
+        "302",
+        2
+      ],
+      "position": "center",
+      "x_offset": 0,
+      "y_offset": 0,
+      "image": [
+        "48",
+        0
+      ]
+    },
+    "class_type": "ImageCrop+",
+    "_meta": {
+      "title": "🔧 Image Crop"
+    }
+  },
+  "86": {
+    "inputs": {
+      "images": [
+        "85",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "98": {
+    "inputs": {
+      "tile_size": [
+        "134",
+        0
+      ],
+      "tile_stride": [
+        "135",
+        0
+      ],
+      "image": [
+        "303",
+        0
+      ]
+    },
+    "class_type": "SUPIR_tiles",
+    "_meta": {
+      "title": "SUPIR Tiles Preview"
+    }
+  },
+  "101": {
+    "inputs": {
+      "images": [
+        "98",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "104": {
+    "inputs": {
+      "input": [
+        "36",
+        0
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
+    }
+  },
+  "110": {
+    "inputs": {
+      "input": [
+        "303",
+        1
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
+    }
+  },
+  "134": {
+    "inputs": {
+      "any_01": [
+        "149",
+        0
+      ]
+    },
+    "class_type": "Any Switch (rgthree)",
+    "_meta": {
+      "title": "Tile Size"
+    }
+  },
+  "135": {
+    "inputs": {
+      "any_01": [
+        "36",
+        0
+      ]
+    },
+    "class_type": "Any Switch (rgthree)",
+    "_meta": {
+      "title": "Tile Stride"
+    }
+  },
+  "148": {
+    "inputs": {
+      "input": [
+        "303",
+        2
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
+    }
+  },
+  "149": {
+    "inputs": {
+      "op": "Div",
+      "a": [
+        "303",
+        1
+      ],
+      "b": 1
+    },
+    "class_type": "CM_IntBinaryOperation",
+    "_meta": {
+      "title": "Tile Size"
+    }
+  },
+  "150": {
+    "inputs": {
+      "input": [
+        "149",
+        0
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
+    }
+  },
+  "261": {
+    "inputs": {
+      "value": 2
+    },
+    "class_type": "ImpactInt",
+    "_meta": {
+      "title": "Upscale By"
+    }
+  },
+  "272": {
+    "inputs": {
+      "input": [
+        "65",
+        0
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
+    }
+  },
+  "273": {
+    "inputs": {
+      "input": [
+        "65",
+        1
+      ],
+      "output": ""
+    },
+    "class_type": "Display Int (rgthree)",
+    "_meta": {
+      "title": "Display Int (rgthree)"
+    }
+  },
+  "282": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "21",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "283": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "21",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "296": {
+    "inputs": {
+      "value": 32
+    },
+    "class_type": "ImpactInt",
+    "_meta": {
+      "title": "Divide by"
+    }
+  },
+  "302": {
+    "inputs": {
+      "width": [
+        "65",
+        0
+      ],
+      "height": [
+        "65",
+        1
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 32,
+      "image": [
+        "48",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "303": {
+    "inputs": {
+      "width": [
+        "45",
+        0
+      ],
+      "height": [
+        "46",
+        0
+      ],
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 32,
+      "image": [
+        "85",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "312": {
+    "inputs": {
+      "control_net_name": "control_v11f1e_sd15_tile_fp16.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "313": {
+    "inputs": {
+      "text": "photo, extremely high quality RAW photograph, detailed background, intricate, Exquisite details and textures, highly detailed, ultra detailed photograph, warm lighting, 4k, sharp focus, high resolution, detailed skin, detailed eyes, 8k uhd, dslr, high quality, film grain, Fujifilm XT3, <lora:more_details>",
+      "clip": [
+        "396",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "314": {
+    "inputs": {
+      "ckpt_name": "realisticVisionV60B1_v40VAE.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "315": {
+    "inputs": {
+      "text": "NSFW, cartoon, painting, illustration, drawing, open mouth, blemish, ugly skin, freckles, wrinkled clothing",
+      "clip": [
+        "396",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "316": {
+    "inputs": {
+      "model_name": "RealESRGAN_x2.pth"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "Load Upscale Model"
+    }
+  },
+  "318": {
+    "inputs": {
+      "width": 1024,
+      "height": 1536,
+      "upscale_method": "nearest-exact",
+      "keep_proportion": true,
+      "divisible_by": 2,
+      "image": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "ImageResizeKJ",
+    "_meta": {
+      "title": "Resize Image"
+    }
+  },
+  "319": {
+    "inputs": {
+      "images": [
+        "318",
+        0
+      ]
+    },
+    "class_type": "Image to Seed",
+    "_meta": {
+      "title": "Image to Seed"
+    }
+  },
+  "328": {
+    "inputs": {
+      "strength": 0.8,
+      "conditioning": [
+        "313",
+        0
+      ],
+      "control_net": [
+        "312",
+        0
+      ],
+      "image": [
+        "318",
+        0
+      ]
+    },
+    "class_type": "ControlNetApply",
+    "_meta": {
+      "title": "Apply ControlNet"
+    }
+  },
+  "377": {
+    "inputs": {
+      "method": "hm-mkl-hm",
+      "image_ref": [
+        "14",
+        0
+      ],
+      "image_target": [
+        "378",
+        0
+      ]
+    },
+    "class_type": "ColorMatch",
+    "_meta": {
+      "title": "Color Match"
+    }
+  },
+  "378": {
+    "inputs": {
+      "upscale_by": 1,
+      "seed": [
+        "319",
+        0
+      ],
+      "steps": 10,
+      "cfg": 4,
+      "sampler_name": "dpmpp_2m_sde",
+      "scheduler": "karras",
+      "denoise": 0.38,
+      "mode_type": "Chess",
+      "tile_width": 512,
+      "tile_height": 768,
+      "mask_blur": 4,
+      "tile_padding": 344,
+      "seam_fix_mode": "None",
+      "seam_fix_denoise": 0.5,
+      "seam_fix_width": 344,
+      "seam_fix_mask_blur": 4,
+      "seam_fix_padding": 32,
+      "force_uniform_tiles": false,
+      "tiled_decode": false,
+      "image": [
+        "318",
+        0
+      ],
+      "model": [
+        "396",
+        0
+      ],
+      "positive": [
+        "387",
+        0
+      ],
+      "negative": [
+        "315",
+        0
+      ],
+      "vae": [
+        "314",
+        2
+      ],
+      "upscale_model": [
+        "316",
+        0
+      ]
+    },
+    "class_type": "UltimateSDUpscale",
+    "_meta": {
+      "title": "Ultimate SD Upscale"
+    }
+  },
+  "385": {
+    "inputs": {
+      "control_net_name": "control_v11p_sd15_canny.pth"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "387": {
+    "inputs": {
+      "strength": 0.7000000000000001,
+      "conditioning": [
+        "328",
+        0
+      ],
+      "control_net": [
+        "385",
+        0
+      ],
+      "image": [
+        "388",
+        0
+      ]
+    },
+    "class_type": "ControlNetApply",
+    "_meta": {
+      "title": "Apply ControlNet"
+    }
+  },
+  "388": {
+    "inputs": {
+      "low_threshold": 80,
+      "high_threshold": 160,
+      "resolution": 1024,
+      "image": [
+        "318",
+        0
+      ]
+    },
+    "class_type": "CannyEdgePreprocessor",
+    "_meta": {
+      "title": "Canny Edge"
+    }
+  },
+  "392": {
+    "inputs": {
+      "seed": [
+        "52",
+        0
+      ],
+      "steps": 40,
+      "cfg_scale_start": 4,
+      "cfg_scale_end": 5,
+      "EDM_s_churn": 1,
+      "s_noise": 1.0030000000000001,
+      "DPMPP_eta": 1,
+      "control_scale_start": 0.9400000000000001,
+      "control_scale_end": 1,
+      "restore_cfg": -1,
+      "keep_model_loaded": false,
+      "sampler": "TiledRestoreDPMPP2MSampler",
+      "sampler_tile_size": [
+        "98",
+        1
+      ],
+      "sampler_tile_stride": [
+        "98",
+        2
+      ],
+      "SUPIR_model": [
+        "22",
+        0
+      ],
+      "latents": [
+        "11",
+        0
+      ],
+      "positive": [
+        "9",
+        0
+      ],
+      "negative": [
+        "9",
+        1
+      ]
+    },
+    "class_type": "SUPIR_sample",
+    "_meta": {
+      "title": "SUPIR Sampler"
+    }
+  },
+  "394": {
+    "inputs": {
+      "images": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "396": {
+    "inputs": {
+      "lora_name": "more_details.safetensors",
+      "strength_model": 0.4,
+      "strength_clip": 0.4,
+      "model": [
+        "314",
+        0
+      ],
+      "clip": [
+        "314",
+        1
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "Load LoRA"
+    }
+  },
+  "408": {
+    "inputs": {
+      "ckpt_name": "RealVisXL_V4.0_Lightning.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "412": {
+    "inputs": {
+      "text": " NSFW, cartoon, painting, illustration, drawing, open mouth, blemish, ugly skin, freckles, wrinkled clothing, (asian, african, indian), CyberRealistic_Negative\",  \"clothingPrompt\":\"white t-shirt, pure cotton, crew neck, short sleeves, soft and breathable, classic fit, staple for casual or layered outfits",
+      "clip": [
+        "408",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "414": {
+    "inputs": {
+      "wildcard": "(light blue eye:0.5)",
+      "Select to add LoRA": "Select the LoRA to add to the text",
+      "Select to add Wildcard": "Select the Wildcard to add to the text",
+      "model": [
+        "408",
+        0
+      ],
+      "clip": [
+        "408",
+        1
+      ],
+      "vae": [
+        "408",
+        2
+      ],
+      "positive": [
+        "441",
+        0
+      ],
+      "negative": [
+        "412",
+        0
+      ],
+      "bbox_detector": [
+        "416",
+        0
+      ],
+      "sam_model_opt": [
+        "415",
+        0
+      ],
+      "segm_detector_opt": [
+        "416",
+        1
+      ]
+    },
+    "class_type": "ToDetailerPipe",
+    "_meta": {
+      "title": "ToDetailerPipe"
+    }
+  },
+  "415": {
+    "inputs": {
+      "model_name": "sam_vit_b_01ec64.pth",
+      "device_mode": "AUTO"
+    },
+    "class_type": "SAMLoader",
+    "_meta": {
+      "title": "SAMLoader (Impact)"
+    }
+  },
+  "416": {
+    "inputs": {
+      "max_faces": 10,
+      "face": false,
+      "mouth": false,
+      "left_eyebrow": false,
+      "left_eye": true,
+      "left_pupil": false,
+      "right_eyebrow": false,
+      "right_eye": false,
+      "right_pupil": false
+    },
+    "class_type": "MediaPipeFaceMeshDetectorProvider //Inspire",
+    "_meta": {
+      "title": "MediaPipeFaceMesh Detector Provider"
+    }
+  },
+  "417": {
+    "inputs": {
+      "guide_size": 768,
+      "guide_size_for": true,
+      "max_size": 768,
+      "seed": 960929450230175,
+      "steps": 20,
+      "cfg": 4,
+      "sampler_name": "dpmpp_2m_sde",
+      "scheduler": "karras",
+      "denoise": 0.5,
+      "feather": 5,
+      "noise_mask": true,
+      "force_inpaint": true,
+      "bbox_threshold": 0.5,
+      "bbox_dilation": 10,
+      "bbox_crop_factor": 3,
+      "sam_detection_hint": "center-1",
+      "sam_dilation": 0,
+      "sam_threshold": 0.93,
+      "sam_bbox_expansion": 0,
+      "sam_mask_hint_threshold": 0.7,
+      "sam_mask_hint_use_negative": "False",
+      "drop_size": 10,
+      "refiner_ratio": 0.2,
+      "cycle": 1,
+      "inpaint_model": false,
+      "noise_mask_feather": 20,
+      "image": [
+        "377",
+        0
+      ],
+      "detailer_pipe": [
+        "414",
+        0
+      ]
+    },
+    "class_type": "FaceDetailerPipe",
+    "_meta": {
+      "title": "FaceDetailer (pipe)"
+    }
+  },
+  "418": {
+    "inputs": {
+      "rgthree_comparer": {
+        "images": [
+          {
+            "name": "A",
+            "selected": true,
+            "url": "/view?filename=rgthree.compare._temp_vyqzm_00093_.png&type=temp&subfolder=&rand=0.8579260520705385"
+          },
+          {
+            "name": "B",
+            "selected": true,
+            "url": "/view?filename=rgthree.compare._temp_vyqzm_00094_.png&type=temp&subfolder=&rand=0.19769627435849446"
+          }
+        ]
+      },
+      "image_a": [
+        "377",
+        0
+      ],
+      "image_b": [
+        "417",
+        0
+      ]
+    },
+    "class_type": "Image Comparer (rgthree)",
+    "_meta": {
+      "title": "Image Comparer (rgthree)"
+    }
+  },
+  "421": {
+    "inputs": {
+      "images": [
+        "417",
+        1
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "422": {
+    "inputs": {
+      "images": [
+        "417",
+        2
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "423": {
+    "inputs": {
+      "wildcard": "(light blue eye:0.5)",
+      "Select to add LoRA": "Select the LoRA to add to the text",
+      "Select to add Wildcard": "Select the Wildcard to add to the text",
+      "detailer_pipe": [
+        "417",
+        4
+      ],
+      "bbox_detector": [
+        "424",
+        0
+      ],
+      "segm_detector": [
+        "424",
+        1
+      ]
+    },
+    "class_type": "EditDetailerPipe",
+    "_meta": {
+      "title": "Edit DetailerPipe"
+    }
+  },
+  "424": {
+    "inputs": {
+      "max_faces": 10,
+      "face": false,
+      "mouth": false,
+      "left_eyebrow": false,
+      "left_eye": false,
+      "left_pupil": false,
+      "right_eyebrow": false,
+      "right_eye": true,
+      "right_pupil": false
+    },
+    "class_type": "MediaPipeFaceMeshDetectorProvider //Inspire",
+    "_meta": {
+      "title": "MediaPipeFaceMesh Detector Provider"
+    }
+  },
+  "425": {
+    "inputs": {
+      "guide_size": 768,
+      "guide_size_for": true,
+      "max_size": 768,
+      "seed": 248327564785381,
+      "steps": 20,
+      "cfg": 4,
+      "sampler_name": "dpmpp_2m_sde",
+      "scheduler": "karras",
+      "denoise": 0.5,
+      "feather": 5,
+      "noise_mask": true,
+      "force_inpaint": true,
+      "bbox_threshold": 0.5,
+      "bbox_dilation": 10,
+      "bbox_crop_factor": 3,
+      "sam_detection_hint": "center-1",
+      "sam_dilation": 0,
+      "sam_threshold": 0.93,
+      "sam_bbox_expansion": 0,
+      "sam_mask_hint_threshold": 0.7,
+      "sam_mask_hint_use_negative": "False",
+      "drop_size": 10,
+      "refiner_ratio": 0.2,
+      "cycle": 1,
+      "inpaint_model": false,
+      "noise_mask_feather": 20,
+      "image": [
+        "417",
+        0
+      ],
+      "detailer_pipe": [
+        "423",
+        0
+      ]
+    },
+    "class_type": "FaceDetailerPipe",
+    "_meta": {
+      "title": "FaceDetailer (pipe)"
+    }
+  },
+  "426": {
+    "inputs": {
+      "rgthree_comparer": {
+        "images": [
+          {
+            "name": "A",
+            "selected": true,
+            "url": "/view?filename=rgthree.compare._temp_uvzvm_00093_.png&type=temp&subfolder=&rand=0.6340131063120473"
+          },
+          {
+            "name": "B",
+            "selected": true,
+            "url": "/view?filename=rgthree.compare._temp_uvzvm_00094_.png&type=temp&subfolder=&rand=0.0985309036159343"
+          }
+        ]
+      },
+      "image_a": [
+        "377",
+        0
+      ],
+      "image_b": [
+        "425",
+        0
+      ]
+    },
+    "class_type": "Image Comparer (rgthree)",
+    "_meta": {
+      "title": "Image Comparer (rgthree)"
+    }
+  },
+  "427": {
+    "inputs": {
+      "images": [
+        "425",
+        1
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "428": {
+    "inputs": {
+      "images": [
+        "425",
+        2
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "429": {
+    "inputs": {
+      "wildcard": "high quality, mouth of a person, smiling",
+      "Select to add LoRA": "Select the LoRA to add to the text",
+      "Select to add Wildcard": "Select the Wildcard to add to the text",
+      "detailer_pipe": [
+        "425",
+        4
+      ],
+      "bbox_detector": [
+        "430",
+        0
+      ],
+      "segm_detector": [
+        "430",
+        1
+      ]
+    },
+    "class_type": "EditDetailerPipe",
+    "_meta": {
+      "title": "Edit DetailerPipe"
+    }
+  },
+  "430": {
+    "inputs": {
+      "max_faces": 10,
+      "face": false,
+      "mouth": true,
+      "left_eyebrow": false,
+      "left_eye": false,
+      "left_pupil": false,
+      "right_eyebrow": false,
+      "right_eye": false,
+      "right_pupil": false
+    },
+    "class_type": "MediaPipeFaceMeshDetectorProvider //Inspire",
+    "_meta": {
+      "title": "MediaPipeFaceMesh Detector Provider"
+    }
+  },
+  "431": {
+    "inputs": {
+      "guide_size": 768,
+      "guide_size_for": true,
+      "max_size": 768,
+      "seed": 787998989872993,
+      "steps": 20,
+      "cfg": 5,
+      "sampler_name": "dpmpp_2s_ancestral",
+      "scheduler": "karras",
+      "denoise": 0.1,
+      "feather": 5,
+      "noise_mask": true,
+      "force_inpaint": true,
+      "bbox_threshold": 0.5,
+      "bbox_dilation": 10,
+      "bbox_crop_factor": 3,
+      "sam_detection_hint": "center-1",
+      "sam_dilation": 0,
+      "sam_threshold": 0.93,
+      "sam_bbox_expansion": 0,
+      "sam_mask_hint_threshold": 0.7,
+      "sam_mask_hint_use_negative": "False",
+      "drop_size": 10,
+      "refiner_ratio": 0.2,
+      "cycle": 1,
+      "inpaint_model": false,
+      "noise_mask_feather": 20,
+      "image": [
+        "425",
+        0
+      ],
+      "detailer_pipe": [
+        "429",
+        0
+      ]
+    },
+    "class_type": "FaceDetailerPipe",
+    "_meta": {
+      "title": "FaceDetailer (pipe)"
+    }
+  },
+  "433": {
+    "inputs": {
+      "images": [
+        "431",
+        2
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "434": {
+    "inputs": {
+      "images": [
+        "431",
+        1
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "435": {
+    "inputs": {
+      "rgthree_comparer": {
+        "images": [
+          {
+            "name": "A",
+            "selected": true,
+            "url": "/view?filename=rgthree.compare._temp_giynl_00089_.png&type=temp&subfolder=&rand=0.47847005773407614"
+          },
+          {
+            "name": "B",
+            "selected": true,
+            "url": "/view?filename=rgthree.compare._temp_giynl_00090_.png&type=temp&subfolder=&rand=0.19061676577282216"
+          }
+        ]
+      },
+      "image_a": [
+        "377",
+        0
+      ],
+      "image_b": [
+        "431",
+        0
+      ]
+    },
+    "class_type": "Image Comparer (rgthree)",
+    "_meta": {
+      "title": "Image Comparer (rgthree)"
+    }
+  },
+  "441": {
+    "inputs": {
+      "text": "high quality portrait",
+      "clip": [
+        "408",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "445": {
+    "inputs": {
+      "images": [
+        "377",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "447": {
+    "inputs": {
+      "sharpen_radius": 1,
+      "sigma": 0.45,
+      "alpha": 0.8,
+      "image": [
+        "431",
+        0
+      ]
+    },
+    "class_type": "ImageSharpen",
+    "_meta": {
+      "title": "ImageSharpen"
+    }
+  },
+  "448": {
+    "inputs": {
+      "vignette_shape": "oval",
+      "feather_amount": 240,
+      "x_offset": 0,
+      "y_offset": 0,
+      "zoom": 1.7000000000000002,
+      "reverse": "no",
+      "image": [
+        "447",
+        0
+      ]
+    },
+    "class_type": "CR Vignette Filter",
+    "_meta": {
+      "title": "🎨 CR Vignette Filter"
+    }
+  },
+  "456": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "448",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}

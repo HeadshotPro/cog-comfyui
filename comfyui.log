@@ -1,0 +1,191 @@
+## ComfyUI-Manager: installing dependencies. (GitPython)
+[2024-07-20 06:45] ## ComfyUI-Manager: installing dependencies done.
+[2024-07-20 06:45] ** ComfyUI startup time: 2024-07-20 06:45:48.708806
+[2024-07-20 06:45] ** Platform: Linux
+[2024-07-20 06:45] ** Python version: 3.10.6 (main, Jul 15 2024, 04:15:22) [GCC 11.4.0]
+[2024-07-20 06:45] ** Python executable: /root/.pyenv/versions/3.10.6/bin/python
+[2024-07-20 06:45] ** ComfyUI Path: /src/ComfyUI
+[2024-07-20 06:45] ** Log path: /src/comfyui.log
+[2024-07-20 06:45] 
+Prestartup times for custom nodes:
+[2024-07-20 06:45]    0.0 seconds: /src/ComfyUI/custom_nodes/rgthree-comfy
+[2024-07-20 06:45]    7.0 seconds: /src/ComfyUI/custom_nodes/ComfyUI-Manager
+[2024-07-20 06:45] 
+Total VRAM 22723 MB, total RAM 201298 MB
+[2024-07-20 06:45] pytorch version: 2.3.1+cu121
+[2024-07-20 06:45] Set vram state to: HIGH_VRAM
+[2024-07-20 06:45] Device: cuda:0 NVIDIA A10 : cudaMallocAsync
+[2024-07-20 06:45] Using pytorch cross attention
+[2024-07-20 06:45] ### Loading: ComfyUI-Inspire-Pack (V0.82)
+[2024-07-20 06:45] 
+[2024-07-20 06:45] [92m[rgthree] Loaded 40 extraordinary nodes.[0m
+[2024-07-20 06:45] [92m[rgthree] Will use rgthree's optimized recursive execution.[0m
+[2024-07-20 06:45] 
+[2024-07-20 06:45] /src
+[2024-07-20 06:45] ############################################
+[2024-07-20 06:45] /src/custom_nodes/ComfyUI-NAI-styler/CSV
+[2024-07-20 06:45] ############################################
+[2024-07-20 06:45] []
+[2024-07-20 06:45] ############################################
+[2024-07-20 06:45] generated new fontManager
+[2024-07-20 06:45] ------------------------------------------
+[2024-07-20 06:45] [34mComfyroll Studio v1.76 : [92m 175 Nodes Loaded[0m
+[2024-07-20 06:45] ------------------------------------------
+[2024-07-20 06:45] ** For changes, please see patch notes at https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes/blob/main/Patch_Notes.md
+[2024-07-20 06:45] ** For help, please see the wiki at https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes/wiki
+[2024-07-20 06:45] ------------------------------------------
+[2024-07-20 06:45] Total VRAM 22723 MB, total RAM 201298 MB
+[2024-07-20 06:45] pytorch version: 2.3.1+cu121
+[2024-07-20 06:45] Set vram state to: HIGH_VRAM
+[2024-07-20 06:45] Device: cuda:0 NVIDIA A10 : cudaMallocAsync
+[2024-07-20 06:45] ### Loading: ComfyUI-Impact-Pack (V5.18.13)
+[2024-07-20 06:45] ### Loading: ComfyUI-Impact-Pack (Subpack: V0.6)
+[2024-07-20 06:45] [Impact Pack] Wildcards loading done.
+[2024-07-20 06:45] ### Loading: ComfyUI-Manager (V2.46.3)
+[2024-07-20 06:45] ### ComfyUI Revision: UNKNOWN (The currently installed ComfyUI is not a Git repository)
+[2024-07-20 06:45] [36;20m[comfyui_controlnet_aux] | INFO -> Using ckpts path: /src/ComfyUI/custom_nodes/comfyui_controlnet_aux/ckpts[0m
+[2024-07-20 06:45] [36;20m[comfyui_controlnet_aux] | INFO -> Using symlinks: False[0m
+[2024-07-20 06:45] [36;20m[comfyui_controlnet_aux] | INFO -> Using ort providers: ['CUDAExecutionProvider', 'DirectMLExecutionProvider', 'OpenVINOExecutionProvider', 'ROCMExecutionProvider', 'CPUExecutionProvider', 'CoreMLExecutionProvider'][0m
+[2024-07-20 06:45] DWPose: Onnxruntime with acceleration providers detected
+[2024-07-20 06:45] [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/alter-list.json
+[2024-07-20 06:45] [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/model-list.json
+[2024-07-20 06:45] [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json
+[2024-07-20 06:45] [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/github-stats.json
+[2024-07-20 06:45] [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json
+[2024-07-20 06:46] no module 'xformers'. Processing without...
+[2024-07-20 06:46] no module 'xformers'. Processing without...
+[2024-07-20 06:46] [34mWAS Node Suite: [0mOpenCV Python FFMPEG support is enabled[0m
+[2024-07-20 06:46] [34mWAS Node Suite [93mWarning: [0m`ffmpeg_bin_path` is not set in `/src/ComfyUI/custom_nodes/was-node-suite-comfyui/was_suite_config.json` config file. Will attempt to use system ffmpeg binaries if available.[0m
+[2024-07-20 06:46] [34mWAS Node Suite: [0mFinished.[0m [32mLoaded[0m [0m217[0m [32mnodes successfully.[0m
+[2024-07-20 06:46] 
+	[3m[93m"Don't be pushed around by the fears in your mind. Be led by the dreams in your heart."[0m[3m - Roy T. Bennett[0m
+[2024-07-20 06:46] 
+[2024-07-20 06:46] 
+Import times for custom nodes:
+[2024-07-20 06:46]    0.0 seconds: /src/ComfyUI/custom_nodes/ComfyUI-Universal-Styler
+[2024-07-20 06:46]    0.0 seconds: /src/ComfyUI/custom_nodes/ComfyUI-Custom-Scripts
+[2024-07-20 06:46]    0.0 seconds: /src/ComfyUI/custom_nodes/ComfyMath
+[2024-07-20 06:46]    0.0 seconds: /src/ComfyUI/custom_nodes/ComfyUI_UltimateSDUpscale
+[2024-07-20 06:46]    0.0 seconds: /src/ComfyUI/custom_nodes/rgthree-comfy
+[2024-07-20 06:46]    0.0 seconds: /src/ComfyUI/custom_nodes/ComfyUI-Manager
+[2024-07-20 06:46]    0.0 seconds: /src/ComfyUI/custom_nodes/ComfyUI-KJNodes
+[2024-07-20 06:46]    0.0 seconds: /src/ComfyUI/custom_nodes/comfyui_controlnet_aux
+[2024-07-20 06:46]    0.1 seconds: /src/ComfyUI/custom_nodes/ComfyUI_essentials
+[2024-07-20 06:46]    0.1 seconds: /src/ComfyUI/custom_nodes/ComfyUI-Inspire-Pack
+[2024-07-20 06:46]    0.4 seconds: /src/ComfyUI/custom_nodes/ComfyUI-Impact-Pack
+[2024-07-20 06:46]    1.1 seconds: /src/ComfyUI/custom_nodes/ComfyUI_Comfyroll_CustomNodes
+[2024-07-20 06:46]    1.6 seconds: /src/ComfyUI/custom_nodes/was-node-suite-comfyui
+[2024-07-20 06:46]    2.3 seconds: /src/ComfyUI/custom_nodes/ComfyUI-SUPIR
+[2024-07-20 06:46] 
+[2024-07-20 06:46] Setting output directory to: /tmp/outputs
+[2024-07-20 06:46] Setting input directory to: /tmp/inputs
+[2024-07-20 06:46] Starting server
+
+[2024-07-20 06:46] To see the GUI go to: http://127.0.0.1:8188
+[2024-07-20 06:46] got prompt
+[2024-07-20 06:46] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-07-20 06:46] [32m[rgthree][0m First run patching recursive_output_delete_if_changed and recursive_will_execute.[0m
+[2024-07-20 06:46] [33m[rgthree] Note: [0mIf execution seems broken due to forward ComfyUI changes, you can disable the optimization from rgthree settings in ComfyUI.[0m
+[2024-07-20 06:46] torch.Size([2, 1024, 1024, 3])
+[2024-07-20 06:46] len(tiles):  2
+[2024-07-20 06:46] model_type EPS
+[2024-07-20 06:46] Using pytorch attention in VAE
+[2024-07-20 06:46] Using pytorch attention in VAE
+[2024-07-20 06:46] loaded straight to GPU
+[2024-07-20 06:46] Requested to load SDXL
+[2024-07-20 06:46] Loading 1 new model
+[2024-07-20 06:46] Loading weights to:  cuda:0
+[2024-07-20 06:46] Diffusion using fp16
+[2024-07-20 06:46] making attention of type 'vanilla' with 512 in_channels
+[2024-07-20 06:46] Working with z of shape (1, 4, 32, 32) = 4096 dimensions.
+[2024-07-20 06:46] making attention of type 'vanilla' with 512 in_channels
+[2024-07-20 06:46] Attempting to load SDXL model from node inputs
+[2024-07-20 06:46] Requested to load SDXL
+[2024-07-20 06:46] Loading 1 new model
+[2024-07-20 06:46] Loading first clip model from SDXL checkpoint
+[2024-07-20 06:46] Requested to load SDXLClipModel
+[2024-07-20 06:46] Loading 1 new model
+[2024-07-20 06:46] Loading second clip model from SDXL checkpoint
+[2024-07-20 06:46] Attempting to load SUPIR model: [/src/ComfyUI/models/checkpoints/SUPIR-v0F_fp16.safetensors]
+[2024-07-20 06:46] Loaded state_dict from [/src/ComfyUI/models/checkpoints/SUPIR-v0F_fp16.safetensors]
+[2024-07-20 06:46] Encoder using bf16
+[2024-07-20 06:46] [Tiled VAE]: input_size: torch.Size([1, 3, 1536, 1024]), tile_size: 1024, padding: 32
+[2024-07-20 06:46] [Tiled VAE]: split to 2x1 = 2 tiles. Optimal tile size 960x736, original tile size 1024x1024
+[2024-07-20 06:46] [Tiled VAE]: Executing Encoder Task Queue: 100%|██████████| 182/182 [00:02<00:00, 85.31it/s] 
+[2024-07-20 06:46] [Tiled VAE]: Done in 2.583s, max VRAM alloc 10832.569 MB
+[2024-07-20 06:46] [Tiled VAE]: input_size: torch.Size([1, 4, 192, 128]), tile_size: 128, padding: 11
+[2024-07-20 06:46] [Tiled VAE]: split to 2x1 = 2 tiles. Optimal tile size 128x96, original tile size 128x128
+[2024-07-20 06:46] [Tiled VAE]: Executing Decoder Task Queue: 100%|██████████| 246/246 [00:03<00:00, 69.04it/s]
+[2024-07-20 06:46] [Tiled VAE]: Done in 4.020s, max VRAM alloc 11444.819 MB
+[2024-07-20 06:46] Encoder using bf16
+[2024-07-20 06:46] [Tiled VAE]: input_size: torch.Size([1, 3, 1536, 1024]), tile_size: 1024, padding: 32
+[2024-07-20 06:46] [Tiled VAE]: split to 2x1 = 2 tiles. Optimal tile size 960x736, original tile size 1024x1024
+[2024-07-20 06:46] [Tiled VAE]: Executing Encoder Task Queue: 100%|██████████| 182/182 [00:01<00:00, 96.93it/s] 
+[2024-07-20 06:46] [Tiled VAE]: Done in 2.299s, max VRAM alloc 10832.569 MB
+[2024-07-20 06:46] captions:  [['']]
+[2024-07-20 06:46] Batch captioning
+[2024-07-20 06:46] sampler_config:  {'target': '.sgm.modules.diffusionmodules.sampling.TiledRestoreDPMPP2MSampler', 'params': {'num_steps': 40, 'restore_cfg': -1, 's_churn': 1, 's_noise': 1.0030000000000001, 'discretization_config': {'target': '.sgm.modules.diffusionmodules.discretizer.LegacyDDPMDiscretization'}, 'guider_config': {'target': '.sgm.modules.diffusionmodules.guiders.LinearCFG', 'params': {'scale': 4.0, 'scale_min': 5.0}}, 'tile_size': 128, 'tile_stride': 64, 'eta': 1.0}}
+[2024-07-20 06:46] Using random noise
+[2024-07-20 06:46] Image divided into 2 tiles
+[2024-07-20 06:46] Conds received:  3
+[2024-07-20 06:46] /root/.pyenv/versions/3.10.6/lib/python3.10/site-packages/torch/backends/cuda/__init__.py:342: FutureWarning: torch.backends.cuda.sdp_kernel() is deprecated. In the future, this context manager will be removed. Please see, torch.nn.attention.sdpa_kernel() for the new context manager, with updated signature.
+  warnings.warn(
+[2024-07-20 06:47] Sampled  1  of  1
+[2024-07-20 06:47] Decoder using bf16
+[2024-07-20 06:47] SUPIR decoder using torch.bfloat16
+[2024-07-20 06:47] [Tiled VAE]: input_size: torch.Size([1, 4, 192, 128]), tile_size: 128, padding: 11
+[2024-07-20 06:47] [Tiled VAE]: split to 2x1 = 2 tiles. Optimal tile size 128x96, original tile size 128x128
+[2024-07-20 06:47] [Tiled VAE]: Executing Decoder Task Queue: 100%|██████████| 246/246 [00:03<00:00, 69.03it/s]
+[2024-07-20 06:47] [Tiled VAE]: Done in 4.001s, max VRAM alloc 7391.626 MB
+[2024-07-20 06:47] model_type EPS
+[2024-07-20 06:47] Using pytorch attention in VAE
+[2024-07-20 06:47] Using pytorch attention in VAE
+[2024-07-20 06:47] loaded straight to GPU
+[2024-07-20 06:47] Requested to load BaseModel
+[2024-07-20 06:47] Loading 1 new model
+[2024-07-20 06:47] Requested to load SD1ClipModel
+[2024-07-20 06:47] Loading 1 new model
+[2024-07-20 06:47] Canva size: 1024x1536
+[2024-07-20 06:47] Image size: 1024x1536
+[2024-07-20 06:47] Scale factor: 1
+[2024-07-20 06:47] Tile size: 512x768
+[2024-07-20 06:47] Tiles amount: 4
+[2024-07-20 06:47] Grid: 2x2
+[2024-07-20 06:47] Redraw enabled: True
+[2024-07-20 06:47] Seams fix mode: NONE
+[2024-07-20 06:47] 100%|██████████| 10/10 [00:04<00:00,  2.53it/s]100%|██████████| 10/10 [00:04<00:00,  2.47it/s]
+[2024-07-20 06:47] 100%|██████████| 10/10 [00:04<00:00,  2.53it/s]100%|██████████| 10/10 [00:04<00:00,  2.49it/s]
+[2024-07-20 06:47] 100%|██████████| 10/10 [00:04<00:00,  2.52it/s]100%|██████████| 10/10 [00:04<00:00,  2.48it/s]
+[2024-07-20 06:47] 100%|██████████| 10/10 [00:04<00:00,  2.51it/s]100%|██████████| 10/10 [00:04<00:00,  2.48it/s]
+[2024-07-20 06:47] model_type EPS
+[2024-07-20 06:47] Using pytorch attention in VAE
+[2024-07-20 06:47] Using pytorch attention in VAE
+[2024-07-20 06:47] loaded straight to GPU
+[2024-07-20 06:47] Requested to load SDXL
+[2024-07-20 06:47] Loading 1 new model
+[2024-07-20 06:47] Requested to load SDXLClipModel
+[2024-07-20 06:47] Loading 1 new model
+[2024-07-20 06:47] Loads SAM model: /src/ComfyUI/models/sams/sam_vit_b_01ec64.pth (device:AUTO)
+[2024-07-20 06:47] /root/.pyenv/versions/3.10.6/lib/python3.10/site-packages/google/protobuf/symbol_database.py:55: UserWarning: SymbolDatabase.GetPrototype() is deprecated. Please use message_factory.GetMessageClass() instead. SymbolDatabase.GetPrototype() will be removed soon.
+  warnings.warn('SymbolDatabase.GetPrototype() is deprecated. Please '
+[2024-07-20 06:47] # of Detected SEGS: 1
+[2024-07-20 06:47] CLIP: [(light blue eye:0.5)]
+[2024-07-20 06:47] Detailer: segment upscale for ((94, 47)) | crop region (282, 141) x 2.7234042553191484 -> (767, 383)
+[2024-07-20 06:47] Requested to load AutoencoderKL
+[2024-07-20 06:47] Loading 1 new model
+[2024-07-20 06:47] Requested to load SDXL
+[2024-07-20 06:47] Loading 1 new model
+[2024-07-20 06:47] 100%|██████████| 20/20 [00:02<00:00,  7.87it/s]100%|██████████| 20/20 [00:02<00:00,  7.45it/s]
+[2024-07-20 06:47] # of Detected SEGS: 1
+[2024-07-20 06:47] CLIP: [(light blue eye:0.5)]
+[2024-07-20 06:47] Detailer: segment upscale for ((103, 44)) | crop region (309, 132) x 2.485646376616152 -> (768, 328)
+[2024-07-20 06:47] Requested to load SDXL
+[2024-07-20 06:47] Loading 1 new model
+[2024-07-20 06:47] 100%|██████████| 20/20 [00:02<00:00,  7.97it/s]100%|██████████| 20/20 [00:02<00:00,  7.57it/s]
+[2024-07-20 06:48] # of Detected SEGS: 1
+[2024-07-20 06:48] CLIP: [high quality, mouth of a person, smiling]
+[2024-07-20 06:48] Detailer: segment upscale for ((176, 75)) | crop region (528, 225) x 1.454739178690344 -> (768, 327)
+[2024-07-20 06:48] Requested to load SDXL
+[2024-07-20 06:48] Loading 1 new model
+[2024-07-20 06:48] 100%|██████████| 20/20 [00:04<00:00,  4.81it/s]100%|██████████| 20/20 [00:04<00:00,  4.12it/s]
+[2024-07-20 06:48] Prompt executed in 109.83 seconds
