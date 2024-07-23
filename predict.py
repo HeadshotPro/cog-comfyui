@@ -9,7 +9,7 @@ from comfyui import ComfyUI
 from weights_downloader import WeightsDownloader
 from cog_model_helpers import optimise_images
 from config import config
-
+import psutil
 
 os.environ["DOWNLOAD_LATEST_WEIGHTS_MANIFEST"] = "false"
 mimetypes.add_type("image/webp", ".webp")
@@ -24,11 +24,32 @@ with open("workflows/01_api.json", "r") as file:
 
 class Predictor(BasePredictor):
     def setup(self, weights: str):
+        self.check_memory_and_cleanup()
+
         if bool(weights):
             self.handle_user_weights(weights)
 
         self.comfyUI = ComfyUI("127.0.0.1:8188")
         self.comfyUI.start_server(OUTPUT_DIR, INPUT_DIR)
+
+    def check_memory_and_cleanup(self):
+        available_memory_gb = psutil.virtual_memory().available / (1024 ** 3)
+        print(f"System has {available_memory_gb}GB available.")
+        if available_memory_gb < 20:
+            diffusers_path = os.path.join("ComfyUI/models", "diffusers")
+            if os.path.exists(diffusers_path) and os.path.isdir(diffusers_path):
+                print(f"Available memory is under 20GB, deleting contents of {diffusers_path}")
+                for filename in os.listdir(diffusers_path):
+                    file_path = os.path.join(diffusers_path, filename)
+                    try:
+                        if os.path.isfile(file_path) or os.path.islink(file_path):
+                            os.unlink(file_path)
+                        elif os.path.isdir(file_path):
+                            shutil.rmtree(file_path)
+                    except Exception as e:
+                        print(f'Failed to delete {file_path}. Reason: {e}')
+            else:
+                print(f"{diffusers_path} does not exist or has already been cleaned.")
 
     def handle_user_weights(self, weights: str):
         print(f"Downloading user weights from: {weights}")
@@ -96,6 +117,10 @@ class Predictor(BasePredictor):
             default=False,
         ),
     ) -> List[Path]:
+
+        self.check_memory_and_cleanup()
+
+
         """Run a single prediction on the model"""
         self.comfyUI.cleanup(ALL_DIRECTORIES)
 
