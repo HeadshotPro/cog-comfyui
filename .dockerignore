@@ -26,7 +26,7 @@
 # Files
 scripts/*
 test/*
-updated_weights.json
+# updated_weights.json
 downloaded_user_models/
 
 # Extension files

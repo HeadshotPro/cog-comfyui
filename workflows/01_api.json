@@ -1,0 +1,878 @@
+{
+  "6": {
+    "inputs": {
+      "model_path": [
+        "380",
+        0
+      ]
+    },
+    "class_type": "DiffusersLoader",
+    "_meta": {
+      "title": "DiffusersLoader"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "(business portrait photo of sks+ male wearing a tshirt by Bradford Rogne, Annie Leibovitz)+ (white background)+ (day time, front light, diffused)",
+      "clip": [
+        "6",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "text": "NSFW, (deformed iris, deformed pupils, semi-realistic, cgi, 3d, render, sketch, cartoon, drawing, anime, mutated hands and fingers:1.4), (deformed, distorted, disfigured:1.3), poorly drawn, bad anatomy, wrong anatomy, extra limb, missing limb, floating limbs, disconnected limbs, mutation, mutated, ugly, disgusting, amputation, frown, angry, sad, border, text, poster, watermark, canvas, hat, cap, words, headband, (looking away from the camera), graphics",
+      "clip": [
+        "6",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "9": {
+    "inputs": {
+      "seed": [
+        "308",
+        0
+      ],
+      "steps": 50,
+      "cfg": 11,
+      "sampler_name": "dpmpp_sde",
+      "scheduler": "karras",
+      "denoise": 1,
+      "model": [
+        "6",
+        0
+      ],
+      "positive": [
+        "41",
+        0
+      ],
+      "negative": [
+        "8",
+        0
+      ],
+      "latent_image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "10": {
+    "inputs": {
+      "width": 512,
+      "height": 768,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "11": {
+    "inputs": {
+      "samples": [
+        "9",
+        0
+      ],
+      "vae": [
+        "6",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "12": {
+    "inputs": {
+      "images": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "40": {
+    "inputs": {
+      "control_net_name": "control_v11p_sd15_openpose.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "41": {
+    "inputs": {
+      "strength": 0.5,
+      "conditioning": [
+        "7",
+        0
+      ],
+      "control_net": [
+        "40",
+        0
+      ],
+      "image": [
+        "50",
+        0
+      ]
+    },
+    "class_type": "ControlNetApply",
+    "_meta": {
+      "title": "Apply ControlNet"
+    }
+  },
+  "42": {
+    "inputs": {
+      "image": "https://storage.googleapis.com/headshothq/catalog/3e200cf1-634f-4a6e-9e1c-321a4906b6fa.jpg?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=headshotpro-backend-production%40stockai-362303.iam.gserviceaccount.com%2F20240723%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20240723T040651Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=4b3ef340e58e784cca56532599fb3358b797d069b395502391900ae5ee41127021b11e2bd846b2518796d67f8b6e542b11fd23e1fdf2d4effe1c48e402ad1f2ba0766171c38715869f7879e08d45d6ad96ad773504ca22dc337fa181f22e26dad63623dd41a8c72c0f4fe84a894a135818992d98420320d4080e8b5db49c275f79b337ec63755fb691d9f2bef7a3502dd0ef3acd734406f6e77ac4a9816920fc0f6218a5dd675f280af5edf76cdc9c90d6cae90091ea6d9e9f27420b6848795e4b4d6c206cfda2b58df46575e584807ddaee98a3c90f4372b62eb88be8a1423a5cc38f8228359e52c9265f4153f967b4eb9906475ff61e559e15cd87e575dc40",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "50": {
+    "inputs": {
+      "detect_hand": "enable",
+      "detect_body": "enable",
+      "detect_face": "disable",
+      "resolution": 512,
+      "image": [
+        "42",
+        0
+      ]
+    },
+    "class_type": "OpenposePreprocessor",
+    "_meta": {
+      "title": "OpenPose Pose"
+    }
+  },
+  "51": {
+    "inputs": {
+      "images": [
+        "50",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "63": {
+    "inputs": {},
+    "class_type": "BRIA_RMBG_ModelLoader_Zho",
+    "_meta": {
+      "title": "🧹BRIA_RMBG Model Loader"
+    }
+  },
+  "64": {
+    "inputs": {
+      "rmbgmodel": [
+        "63",
+        0
+      ],
+      "image": [
+        "267",
+        0
+      ]
+    },
+    "class_type": "BRIA_RMBG_Zho",
+    "_meta": {
+      "title": "🧹BRIA RMBG"
+    }
+  },
+  "67": {
+    "inputs": {
+      "images": [
+        "64",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "68": {
+    "inputs": {
+      "mask": [
+        "64",
+        1
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "69": {
+    "inputs": {
+      "images": [
+        "68",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "248": {
+    "inputs": {
+      "ckpt_name": "realisticVisionV60B1_v40VAE.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "252": {
+    "inputs": {
+      "seed": 145648438650198,
+      "steps": 20,
+      "cfg": 2,
+      "sampler_name": "dpmpp_sde",
+      "scheduler": "karras",
+      "denoise": 1,
+      "model": [
+        "248",
+        0
+      ],
+      "positive": [
+        "283",
+        0
+      ],
+      "negative": [
+        "254",
+        0
+      ],
+      "latent_image": [
+        "264",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "253": {
+    "inputs": {
+      "text": "(a person wearing a yellow sweater)+",
+      "clip": [
+        "248",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "254": {
+    "inputs": {
+      "text": "NSFW, nude, boobs, (worst quality, low quality, illustration, 3d, 2d, painting, cartoons, sketch)",
+      "clip": [
+        "248",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "257": {
+    "inputs": {
+      "prompt": "clothing",
+      "threshold": 0.4,
+      "sam_model": [
+        "260",
+        0
+      ],
+      "grounding_dino_model": [
+        "259",
+        0
+      ],
+      "image": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "GroundingDinoSAMSegment (segment anything)",
+    "_meta": {
+      "title": "GroundingDinoSAMSegment (segment anything)"
+    }
+  },
+  "259": {
+    "inputs": {
+      "model_name": "GroundingDINO_SwinT_OGC (694MB)"
+    },
+    "class_type": "GroundingDinoModelLoader (segment anything)",
+    "_meta": {
+      "title": "GroundingDinoModelLoader (segment anything)"
+    }
+  },
+  "260": {
+    "inputs": {
+      "model_name": "sam_vit_b_01ec64.pth",
+      "device_mode": "Prefer GPU"
+    },
+    "class_type": "SAMLoader",
+    "_meta": {
+      "title": "SAMLoader (Impact)"
+    }
+  },
+  "264": {
+    "inputs": {
+      "grow_mask_by": 4,
+      "pixels": [
+        "11",
+        0
+      ],
+      "vae": [
+        "248",
+        2
+      ],
+      "mask": [
+        "277",
+        0
+      ]
+    },
+    "class_type": "VAEEncodeForInpaint",
+    "_meta": {
+      "title": "VAE Encode (for Inpainting)"
+    }
+  },
+  "267": {
+    "inputs": {
+      "samples": [
+        "252",
+        0
+      ],
+      "vae": [
+        "248",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "268": {
+    "inputs": {
+      "images": [
+        "267",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "269": {
+    "inputs": {
+      "samples": [
+        "264",
+        0
+      ],
+      "vae": [
+        "248",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "270": {
+    "inputs": {
+      "images": [
+        "269",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "277": {
+    "inputs": {
+      "expand": 10,
+      "incremental_expandrate": 0,
+      "tapered_corners": true,
+      "flip_input": false,
+      "blur_radius": 10,
+      "lerp_alpha": 1,
+      "decay_factor": 1,
+      "fill_holes": true,
+      "mask": [
+        "257",
+        1
+      ]
+    },
+    "class_type": "GrowMaskWithBlur",
+    "_meta": {
+      "title": "Grow Mask With Blur"
+    }
+  },
+  "283": {
+    "inputs": {
+      "strength": 0.5,
+      "conditioning": [
+        "253",
+        0
+      ],
+      "control_net": [
+        "286",
+        0
+      ],
+      "image": [
+        "293",
+        0
+      ]
+    },
+    "class_type": "ControlNetApply",
+    "_meta": {
+      "title": "Apply ControlNet"
+    }
+  },
+  "286": {
+    "inputs": {
+      "control_net_name": "control_v11f1p_sd15_depth.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "290": {
+    "inputs": {
+      "images": [
+        "293",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "293": {
+    "inputs": {
+      "rm_nearest": 0,
+      "rm_background": 0,
+      "boost": "disable",
+      "resolution": 512,
+      "image": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "LeReS-DepthMapPreprocessor",
+    "_meta": {
+      "title": "LeReS Depth Map (enable boost for leres++)"
+    }
+  },
+  "303": {
+    "inputs": {
+      "mask": [
+        "277",
+        0
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "304": {
+    "inputs": {
+      "images": [
+        "303",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "308": {
+    "inputs": {
+      "images": [
+        "42",
+        0
+      ]
+    },
+    "class_type": "Image to Seed",
+    "_meta": {
+      "title": "Image to Seed"
+    }
+  },
+  "325": {
+    "inputs": {
+      "text": "RAW photo, white background, 8k uhd, dslr, soft lighting, high quality, film grain, Fujifilm XT3",
+      "clip": [
+        "248",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "326": {
+    "inputs": {
+      "text": "NSFW, nude, boobs, (worst quality, low quality, illustration, 3d, 2d, painting, cartoons, sketch), sharp, crisp, person+",
+      "clip": [
+        "248",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "348": {
+    "inputs": {
+      "strength": 2,
+      "conditioning": [
+        "325",
+        0
+      ],
+      "control_net": [
+        "286",
+        0
+      ],
+      "image": [
+        "293",
+        0
+      ]
+    },
+    "class_type": "ControlNetApply",
+    "_meta": {
+      "title": "Apply ControlNet"
+    }
+  },
+  "349": {
+    "inputs": {
+      "images": [
+        "267",
+        0
+      ]
+    },
+    "class_type": "Image to Seed",
+    "_meta": {
+      "title": "Image to Seed"
+    }
+  },
+  "350": {
+    "inputs": {
+      "image": "https://plus.unsplash.com/premium_photo-1664970900025-1e3099ca757a?q=80&w=4151&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "359": {
+    "inputs": {
+      "blend_percentage": 1,
+      "image_a": [
+        "373",
+        0
+      ],
+      "image_b": [
+        "64",
+        0
+      ],
+      "mask": [
+        "68",
+        0
+      ]
+    },
+    "class_type": "Image Blend by Mask",
+    "_meta": {
+      "title": "Image Blend by Mask"
+    }
+  },
+  "360": {
+    "inputs": {
+      "images": [
+        "359",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "361": {
+    "inputs": {
+      "width": 512,
+      "height": 768,
+      "interpolation": "nearest",
+      "method": "stretch",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "350",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "362": {
+    "inputs": {
+      "seed": [
+        "349",
+        0
+      ],
+      "steps": 20,
+      "cfg": 3,
+      "sampler_name": "dpmpp_sde",
+      "scheduler": "karras",
+      "denoise": 0.25,
+      "model": [
+        "248",
+        0
+      ],
+      "positive": [
+        "348",
+        0
+      ],
+      "negative": [
+        "326",
+        0
+      ],
+      "latent_image": [
+        "363",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "363": {
+    "inputs": {
+      "pixels": [
+        "359",
+        0
+      ],
+      "vae": [
+        "248",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "364": {
+    "inputs": {
+      "samples": [
+        "362",
+        0
+      ],
+      "vae": [
+        "248",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "365": {
+    "inputs": {
+      "images": [
+        "364",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "367": {
+    "inputs": {
+      "images": [
+        "370",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "369": {
+    "inputs": {
+      "kind": "RGB",
+      "image": [
+        "64",
+        0
+      ]
+    },
+    "class_type": "Change Channel Count",
+    "_meta": {
+      "title": "Change Channel Count"
+    }
+  },
+  "370": {
+    "inputs": {
+      "blend_percentage": 1,
+      "image_a": [
+        "364",
+        0
+      ],
+      "image_b": [
+        "369",
+        0
+      ],
+      "mask": [
+        "372",
+        0
+      ]
+    },
+    "class_type": "Image Blend by Mask",
+    "_meta": {
+      "title": "Image Blend by Mask"
+    }
+  },
+  "371": {
+    "inputs": {
+      "expand": -7,
+      "incremental_expandrate": 0,
+      "tapered_corners": true,
+      "flip_input": false,
+      "blur_radius": 0,
+      "lerp_alpha": 1,
+      "decay_factor": 1,
+      "fill_holes": false,
+      "mask": [
+        "64",
+        1
+      ]
+    },
+    "class_type": "GrowMaskWithBlur",
+    "_meta": {
+      "title": "Grow Mask With Blur"
+    }
+  },
+  "372": {
+    "inputs": {
+      "mask": [
+        "371",
+        0
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "373": {
+    "inputs": {
+      "blur_radius": 8,
+      "sigma": 1,
+      "image": [
+        "377",
+        0
+      ]
+    },
+    "class_type": "ImageBlur",
+    "_meta": {
+      "title": "ImageBlur"
+    }
+  },
+  "377": {
+    "inputs": {
+      "temperature": 0,
+      "hue": 0,
+      "brightness": -15,
+      "contrast": -10,
+      "saturation": 0,
+      "gamma": 1,
+      "image": [
+        "361",
+        0
+      ]
+    },
+    "class_type": "ColorCorrect",
+    "_meta": {
+      "title": "ColorCorrect"
+    }
+  },
+  "378": {
+    "inputs": {
+      "images": [
+        "373",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "380": {
+    "inputs": {
+      "url": "https://replicate.delivery/yhqm/F3KfxvuMhaRAIae4vNf7Of9pvH8spbQ5R93arbErajHCIzsMB/output.zip",
+      "force_download": false
+    },
+    "class_type": "[HSP] Download Dreambooth Checkpoint",
+    "_meta": {
+      "title": "[HSP] Download Dreambooth Checkpoint"
+    }
+  },
+  "381": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "370",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}

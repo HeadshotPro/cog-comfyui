@@ -108,12 +108,16 @@ class ComfyUI:
         seen_inputs = set()
         for node in workflow.values():
             if "inputs" in node:
+                if node.get("class_type") == "[HSP] Download Dreambooth Checkpoint":
+                    print("Skipping download for [HSP] Download Dreambooth Checkpoint node")
+                    continue  # Skip this node and move to the next one
                 for input_key, input_value in node["inputs"].items():
                     if isinstance(input_value, str) and input_value not in seen_inputs:
                         seen_inputs.add(input_value)
                         if input_value.startswith(("http://", "https://")):
+                            base_filename = os.path.basename(input_value.split("?")[0])
                             filename = os.path.join(
-                                self.input_directory, os.path.basename(input_value)
+                                self.input_directory, os.path.basename(base_filename)
                             )
                             if not os.path.exists(filename):
                                 print(f"Downloading {input_value} to {filename}")
