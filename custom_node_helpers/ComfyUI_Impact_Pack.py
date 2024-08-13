@@ -7,5 +7,6 @@ class ComfyUI_Impact_Pack(CustomNodeHelper):
             weights_to_download.extend([
                 "bbox/hand_yolov8s.pt",
                 "bbox/face_yolov8m.pt",
-                "segm/person_yolov8m-seg.pt"
+                "segm/person_yolov8m-seg.pt",
+                "segm/deepfashion2_yolov8s-seg.pt"
             ])

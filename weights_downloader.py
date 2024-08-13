@@ -83,6 +83,7 @@ class WeightsDownloader:
                 subprocess.check_call(
                     ["pget", "--log-level", "warn", "-xf", url, dest], close_fds=False
                 )
+                print(f"Downloaded {url} to {dest} from custom endpoint")
             except subprocess.CalledProcessError as e:
                 raise RuntimeError(f"Failed to download {weight_str} from both primary and custom hosting.") from e
         elapsed_time = time.time() - start

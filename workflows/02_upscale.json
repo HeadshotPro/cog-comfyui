@@ -28,7 +28,7 @@
   "9": {
     "inputs": {
       "positive_prompt": "Cinematic, High Contrast, highly detailed, taken using a Canon EOS R camera, hyper detailed photo - realistic maximum detail, 32k, Color Grading, ultra HD, extreme meticulous detailing, skin pore detailing, hyper sharpness, perfect without deformations.",
-      "negative_prompt": "painting, oil painting, illustration, drawing, art, sketch, oil painting, cartoon, CG Style, 3D render, unreal engine, blurring, dirty, messy, worst quality, low quality, frames, watermark, signature, jpeg artifacts, deformed, lowres, over-smooth, old, wrinkles",
+      "negative_prompt": "painting, oil painting, illustration, drawing, art, sketch, oil painting, cartoon, CG Style, 3D render, unreal engine, blurring, dirty, messy, worst quality, low quality, frames, watermark, signature, jpeg artifacts, deformed, lowres, over-smooth",
       "SUPIR_model": [
         "22",
         0
@@ -110,12 +110,12 @@
           {
             "name": "A",
             "selected": true,
-            "url": "/view?filename=rgthree.compare._temp_eklij_00023_.png&type=temp&subfolder=&rand=0.12869692032321178"
+            "url": "/view?filename=rgthree.compare._temp_qldgz_00001_.png&type=temp&subfolder=&rand=0.4554108242157411"
           },
           {
             "name": "B",
             "selected": true,
-            "url": "/view?filename=rgthree.compare._temp_eklij_00024_.png&type=temp&subfolder=&rand=0.48929983282075273"
+            "url": "/view?filename=rgthree.compare._temp_qldgz_00002_.png&type=temp&subfolder=&rand=0.519977611139443"
           }
         ]
       },
@@ -228,7 +228,7 @@
   },
   "48": {
     "inputs": {
-      "image": "https://storage.googleapis.com/stockai-stock-photos/17%20(1).png",
+      "image": "https://storage.googleapis.com/stockai-stock-photos/974e84ba-ebec-48bc-b055-63bafcbf2b66.png",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -695,6 +695,23 @@
       "title": "Apply ControlNet"
     }
   },
+  "377": {
+    "inputs": {
+      "method": "hm-mkl-hm",
+      "image_ref": [
+        "14",
+        0
+      ],
+      "image_target": [
+        "378",
+        0
+      ]
+    },
+    "class_type": "ColorMatch",
+    "_meta": {
+      "title": "Color Match"
+    }
+  },
   "378": {
     "inputs": {
       "upscale_by": 1,
@@ -703,10 +720,10 @@
         0
       ],
       "steps": 10,
-      "cfg": 3,
+      "cfg": 4,
       "sampler_name": "dpmpp_2m_sde",
       "scheduler": "karras",
-      "denoise": 0.3,
+      "denoise": 0.35,
       "mode_type": "Chess",
       "tile_width": 512,
       "tile_height": 768,
@@ -801,10 +818,10 @@
         0
       ],
       "steps": 40,
-      "cfg_scale_start": 3,
-      "cfg_scale_end": 4.5,
+      "cfg_scale_start": 4,
+      "cfg_scale_end": 5,
       "EDM_s_churn": 1,
-      "s_noise": 1.0010000000000001,
+      "s_noise": 1.0030000000000001,
       "DPMPP_eta": 1,
       "control_scale_start": 0.9400000000000001,
       "control_scale_end": 1,
@@ -896,7 +913,7 @@
   },
   "414": {
     "inputs": {
-      "wildcard": "(light blue eye:0.5)+<lora:loraPerfecteyesV1>",
+      "wildcard": "({{EYE_COLOR}} eye:0.5)",
       "Select to add LoRA": "Select the LoRA to add to the text",
       "Select to add Wildcard": "Select the Wildcard to add to the text",
       "model": [
@@ -969,9 +986,9 @@
       "guide_size": 768,
       "guide_size_for": true,
       "max_size": 768,
-      "seed": 81184770686360,
+      "seed": 272726420302185,
       "steps": 20,
-      "cfg": 3,
+      "cfg": 4,
       "sampler_name": "dpmpp_2m_sde",
       "scheduler": "karras",
       "denoise": 0.4,
@@ -993,7 +1010,7 @@
       "inpaint_model": false,
       "noise_mask_feather": 20,
       "image": [
-        "458",
+        "377",
         0
       ],
       "detailer_pipe": [
@@ -1013,17 +1030,17 @@
           {
             "name": "A",
             "selected": true,
-            "url": "/view?filename=rgthree.compare._temp_bbupe_00023_.png&type=temp&subfolder=&rand=0.19808917447038876"
+            "url": "/view?filename=rgthree.compare._temp_udvfu_00001_.png&type=temp&subfolder=&rand=0.20725717067279636"
           },
           {
             "name": "B",
             "selected": true,
-            "url": "/view?filename=rgthree.compare._temp_bbupe_00024_.png&type=temp&subfolder=&rand=0.3221917289997116"
+            "url": "/view?filename=rgthree.compare._temp_udvfu_00002_.png&type=temp&subfolder=&rand=0.5420257035520009"
           }
         ]
       },
       "image_a": [
-        "458",
+        "377",
         0
       ],
       "image_b": [
@@ -1062,7 +1079,7 @@
   },
   "423": {
     "inputs": {
-      "wildcard": "(light blue eye:0.5)+<lora:loraPerfecteyesV1>",
+      "wildcard": "({{EYE_COLOR}} eye:0.5)",
       "Select to add LoRA": "Select the LoRA to add to the text",
       "Select to add Wildcard": "Select the Wildcard to add to the text",
       "detailer_pipe": [
@@ -1105,12 +1122,12 @@
       "guide_size": 768,
       "guide_size_for": true,
       "max_size": 768,
-      "seed": 81184770686360,
+      "seed": 532569098635523,
       "steps": 20,
-      "cfg": 3,
+      "cfg": 4,
       "sampler_name": "dpmpp_2m_sde",
       "scheduler": "karras",
-      "denoise": 0.3,
+      "denoise": 0.4,
       "feather": 5,
       "noise_mask": true,
       "force_inpaint": true,
@@ -1149,17 +1166,17 @@
           {
             "name": "A",
             "selected": true,
-            "url": "/view?filename=rgthree.compare._temp_akvqs_00023_.png&type=temp&subfolder=&rand=0.9449239453104616"
+            "url": "/view?filename=rgthree.compare._temp_pitxe_00001_.png&type=temp&subfolder=&rand=0.44622383171936697"
           },
           {
             "name": "B",
             "selected": true,
-            "url": "/view?filename=rgthree.compare._temp_akvqs_00024_.png&type=temp&subfolder=&rand=0.07734330758323105"
+            "url": "/view?filename=rgthree.compare._temp_pitxe_00002_.png&type=temp&subfolder=&rand=0.21881136344372143"
           }
         ]
       },
       "image_a": [
-        "458",
+        "377",
         0
       ],
       "image_b": [
@@ -1241,7 +1258,7 @@
       "guide_size": 768,
       "guide_size_for": true,
       "max_size": 768,
-      "seed": 141891360335031,
+      "seed": 474722327141638,
       "steps": 20,
       "cfg": 5,
       "sampler_name": "dpmpp_2s_ancestral",
@@ -1309,17 +1326,17 @@
           {
             "name": "A",
             "selected": true,
-            "url": "/view?filename=rgthree.compare._temp_mhups_00023_.png&type=temp&subfolder=&rand=0.38147622510280366"
+            "url": "/view?filename=rgthree.compare._temp_jvecx_00001_.png&type=temp&subfolder=&rand=0.8379241957985228"
           },
           {
             "name": "B",
             "selected": true,
-            "url": "/view?filename=rgthree.compare._temp_mhups_00024_.png&type=temp&subfolder=&rand=0.3588930561763497"
+            "url": "/view?filename=rgthree.compare._temp_jvecx_00002_.png&type=temp&subfolder=&rand=0.9737460723866738"
           }
         ]
       },
       "image_a": [
-        "458",
+        "377",
         0
       ],
       "image_b": [
@@ -1345,10 +1362,22 @@
       "title": "CLIP Text Encode (Prompt)"
     }
   },
+  "445": {
+    "inputs": {
+      "images": [
+        "377",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
   "447": {
     "inputs": {
       "sharpen_radius": 1,
-      "sigma": 0.4,
+      "sigma": 0.38,
       "alpha": 0.8,
       "image": [
         "431",
@@ -1360,86 +1389,29 @@
       "title": "ImageSharpen"
     }
   },
-  "457": {
+  "448": {
     "inputs": {
-      "images": [
-        "378",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "Preview Image"
-    }
-  },
-  "458": {
-    "inputs": {
-      "method": "hm-mkl-hm",
-      "image_ref": [
-        "14",
-        0
-      ],
-      "image_target": [
-        "378",
-        0
-      ]
-    },
-    "class_type": "ColorMatch",
-    "_meta": {
-      "title": "Color Match"
-    }
-  },
-  "460": {
-    "inputs": {
-      "images": [
-        "458",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "Preview Image"
-    }
-  },
-  "465": {
-    "inputs": {
-      "temperature": 0,
-      "hue": 0,
-      "brightness": 2,
-      "contrast": -3,
-      "saturation": 0,
-      "gamma": 1,
+      "vignette_shape": "oval",
+      "feather_amount": 240,
+      "x_offset": 0,
+      "y_offset": 0,
+      "zoom": 1.7000000000000002,
+      "reverse": "no",
       "image": [
         "447",
         0
       ]
     },
-    "class_type": "ColorCorrect",
+    "class_type": "CR Vignette Filter",
     "_meta": {
-      "title": "ColorCorrect"
+      "title": "🎨 CR Vignette Filter"
     }
   },
-  "470": {
-    "inputs": {
-      "intensity": 0.06,
-      "scale": 3,
-      "temperature": 0,
-      "vignette": 0,
-      "image": [
-        "465",
-        0
-      ]
-    },
-    "class_type": "FilmGrain",
-    "_meta": {
-      "title": "FilmGrain"
-    }
-  },
-  "472": {
+  "456": {
     "inputs": {
       "filename_prefix": "ComfyUI",
       "images": [
-        "470",
+        "448",
         0
       ]
     },

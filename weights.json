@@ -633,5 +633,8 @@
   ],
   "ULTRAPIXEL": [
     "ultrapixel_t2i.safetensors"
+  ],
+  "REMOVEBG": [
+    "RMBG-1.4.pth"
   ]
 }

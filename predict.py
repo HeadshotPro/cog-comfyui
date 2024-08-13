@@ -4,7 +4,7 @@ import tarfile
 import zipfile
 import mimetypes
 from typing import List
-from cog import BasePredictor, Input, Path
+from cog import BasePredictor, Input, Path, Secret
 from comfyui import ComfyUI
 from weights_downloader import WeightsDownloader
 from cog_model_helpers import optimise_images
@@ -18,7 +18,7 @@ INPUT_DIR = "/tmp/inputs"
 COMFYUI_TEMP_OUTPUT_DIR = "ComfyUI/temp"
 ALL_DIRECTORIES = [OUTPUT_DIR, INPUT_DIR, COMFYUI_TEMP_OUTPUT_DIR]
 
-with open("workflows/01_api.json", "r") as file:
+with open("workflows/02_upscale.json", "r") as file:
     EXAMPLE_WORKFLOW_JSON = file.read()
 
 
@@ -94,7 +94,7 @@ class Predictor(BasePredictor):
 
     def predict(
         self,
-        workflow_json: str = Input(
+        workflow_json: Secret = Input(
             description="Your ComfyUI workflow as JSON. You must use the API version of your workflow. Get it from ComfyUI using ‘Save (API format)’. Instructions here: https://github.com/fofr/cog-comfyui",
             default="",
         ),
@@ -116,6 +116,10 @@ class Predictor(BasePredictor):
             description="Force reset the ComfyUI cache before running the workflow. Useful for debugging.",
             default=False,
         ),
+        meta: str = Input(
+            description="Meta to return on output",
+            default="",
+        )
     ) -> List[Path]:
 
         self.check_memory_and_cleanup()
@@ -127,7 +131,10 @@ class Predictor(BasePredictor):
         if input_file:
             self.handle_input_file(input_file)
 
-        wf = self.comfyUI.load_workflow(workflow_json or EXAMPLE_WORKFLOW_JSON)
+        if not workflow_json:
+            wf = self.comfyUI.load_workflow(EXAMPLE_WORKFLOW_JSON)
+        else:
+             wf = self.comfyUI.load_workflow(workflow_json.get_secret_value() or EXAMPLE_WORKFLOW_JSON)
 
         self.comfyUI.connect()
 
