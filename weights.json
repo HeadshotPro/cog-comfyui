@@ -37,7 +37,6 @@
     "Juggernaut_RunDiffusionPhoto2_Lightning_4Steps.safetensors",
     "juggernautXL_juggernautX.safetensors",
     "juggernautXL_v8Rundiffusion.safetensors",
-    "juggerxlInpaint_juggerInpaintV8.safetensors",
     "LCM_Dreamshaper_v7_4k.safetensors",
     "leosamsHelloworldXL_helloworldXL60.safetensors",
     "magicmixReverie_v10.safetensors",
@@ -45,7 +44,6 @@
     "motionctrl.pth",
     "motionctrl_svd.ckpt",
     "photonLCM_v10.safetensors",
-    "PixArt-Sigma-XL-2-1024-MS.pth",
     "pixlAnimeCartoonComic_v10.safetensors",
     "playground-v2.5-1024px-aesthetic.fp16.safetensors",
     "ponyDiffusionV6XL_v6StartWithThisOne.safetensors",
@@ -53,8 +51,6 @@
     "ProteusV0.4-Lighting.safetensors",
     "ProteusV0.4.safetensors",
     "rcnzCartoon3d_v20.safetensors",
-    "Realistic_Vision_V4.0-inpainting.safetensors",
-    "Realistic_Vision_V4.0.safetensors",
     "Realistic_Vision_V5.1-inpainting.ckpt",
     "Realistic_Vision_V5.1-inpainting.safetensors",
     "Realistic_Vision_V5.1.ckpt",
@@ -95,13 +91,7 @@
     "sdxlUnstableDiffusers_v11Rundiffusion.safetensors",
     "segmind-vega.safetensors",
     "SSD-1B.safetensors",
-    "stable_cascade_stage_b.safetensors",
-    "stable_cascade_stage_c.safetensors",
     "starlightXLAnimated_v3.safetensors",
-    "SUPIR-v0F.ckpt",
-    "SUPIR-v0F_fp16.safetensors",
-    "SUPIR-v0Q.ckpt",
-    "SUPIR-v0Q_fp16.safetensors",
     "svd.safetensors",
     "svd_xt.safetensors",
     "toonyou_beta6.safetensors",
@@ -113,7 +103,9 @@
     "v2-1_768-nonema-pruned.ckpt",
     "v2-1_768-nonema-pruned.safetensors",
     "wd-illusion-fp16.safetensors",
-    "x4-upscaler-ema.safetensors"
+    "x4-upscaler-ema.safetensors",
+    "realisticVisionV60B1_v40VAE.safetensors",
+    "realisticvisionv4-inpaint.safetensors"
   ],
   "UPSCALE_MODELS": [
     "4x-AnimeSharp.pth",
@@ -143,7 +135,6 @@
     "CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors",
     "CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors",
     "CLIP-ViT-H-fp16.safetensors",
-    "clip-vit-large-patch14-336.bin",
     "clip-vit-large-patch14.bin",
     "clip_vision_g.safetensors",
     "IPAdapter_image_encoder_sd15.safetensors",
@@ -209,12 +200,10 @@
     "artificialguybr/TshirtDesignRedmond-TshirtDesignAF.safetensors",
     "artificialguybr/TShirtDesignRedmondV2-Tshirtdesign-TshirtDesignAF.safetensors",
     "artificialguybr/View360.safetensors",
-    "charTurnBetaLora.safetensors",
     "COOLKIDS_MERGE_V2.5.safetensors",
     "fofr/emoji.safetensors",
     "glowneon_xl_v1.safetensors",
     "Harrlogos_v2.0.safetensors",
-    "hd_helper_v1.safetensors",
     "Hyper-SD15-1step-lora.safetensors",
     "Hyper-SD15-2steps-lora.safetensors",
     "Hyper-SD15-4steps-lora.safetensors",
@@ -234,7 +223,6 @@
     "MODILL_XL_0.27_RC.safetensors",
     "more_details.safetensors",
     "PerfectEyesXL.safetensors",
-    "Polaroidv2.safetensors",
     "RW_PS1v1.safetensors",
     "sd_xl_offset_example-lora_1.0.safetensors",
     "sdxl_lightning_2step_lora.pth",
@@ -247,7 +235,8 @@
     "Segmind-VegaRT.safetensors",
     "theovercomer8sContrastFix_sd15.safetensors",
     "theovercomer8sContrastFix_sd21768.safetensors",
-    "weight_slider-LECO-v1.safetensors"
+    "weight_slider-LECO-v1.safetensors",
+    "lit.safetensors"
   ],
   "EMBEDDINGS": [
     "bad_prompt_version2-neg.pt",
@@ -259,7 +248,13 @@
     "negative_hand-neg.pt",
     "ng_deepnegative_v1_75t.pt",
     "realisticvision-negative-embedding.pt",
-    "verybadimagenegative_v1.3.pt"
+    "verybadimagenegative_v1.3.pt",
+    "softrealisticneg.pt",
+    "BadDream.pt",
+    "UnrealisticDream.pt",
+    "cyberrealistic-neg.pt",
+    "deepnegative.pt",
+    "pa7portrait.pt"
   ],
   "CONTROLNET": [
     "animatediff_controlnet.ckpt",
@@ -323,14 +318,12 @@
     "controlnet-canny-sdxl-1.0.safetensors",
     "controlnet-canny-sdxl-1.0_V2.safetensors",
     "controlnet-depth-sdxl-1.0.fp16.safetensors",
-    "controlnet-depth-sdxl-1.0.safetensors",
     "controlnet-openpose-sdxl-1.0.safetensors",
     "controlnet-openpose-sdxl-1.0_twins.safetensors",
     "controlnet-scribble-sdxl-1.0.safetensors",
     "controlnet-sd-xl-1.0-softedge-dexined.safetensors",
     "controlnet-temporalnet-sdxl-1.0.safetensors",
     "controlnet-tile-sdxl-1.0.safetensors",
-    "controlnet-union-sdxl-1.0.safetensors",
     "controlnet-zoe-depth-sdxl-1.0.safetensors",
     "depth-anything.safetensors",
     "depth-zoe-xl-v1.0-controlnet.safetensors",
@@ -394,7 +387,8 @@
     "thibaud_xl_openpose.safetensors",
     "thibaud_xl_openpose_256lora.safetensors",
     "TTPLANET_Controlnet_Tile_realistic_v2_fp16.safetensors",
-    "TTPLANET_Controlnet_Tile_realistic_v2_rank256.safetensors"
+    "control_v11p_sd15_openpose.safetensors",
+    "control_v11f1p_sd15_depth.safetensors"
   ],
   "IPADAPTER": [
     "ip-adapter-faceid-plus_sd15.bin",
@@ -426,22 +420,16 @@
     "ip-adapter_sdxl.safetensors",
     "ip-adapter_sdxl_vit-h.safetensors",
     "ip_plus_composition_sd15.safetensors",
-    "ip_plus_composition_sdxl.safetensors",
-    "Kolors-IP-Adapter-Plus.bin"
+    "ip_plus_composition_sdxl.safetensors"
   ],
   "VAE": [
     "sdxl_vae.safetensors",
-    "stable-cascade/effnet_encoder.safetensors",
-    "stable-cascade/stage_a.safetensors",
-    "vae-ft-mse-840000-ema-pruned.safetensors"
+    "vae-ft-mse-840000-ema-pruned.safetensors",
+    "ae.safetensors"
   ],
   "UNET": [
-    "iclight_sd15_fbc.safetensors",
     "iclight_sd15_fbc_unet_ldm.safetensors",
-    "iclight_sd15_fc.safetensors",
     "iclight_sd15_fc_unet_ldm.safetensors",
-    "iclight_sd15_fcon.safetensors",
-    "kolors.fp16.safetensors",
     "sdxl_lightning_1step_unet_x0.pth",
     "sdxl_lightning_1step_unet_x0.safetensors",
     "sdxl_lightning_2step_unet.pth",
@@ -450,14 +438,7 @@
     "sdxl_lightning_4step_unet.safetensors",
     "sdxl_lightning_8step_unet.pth",
     "sdxl_lightning_8step_unet.safetensors",
-    "stable-cascade/stage_b.safetensors",
-    "stable-cascade/stage_b_bf16.safetensors",
-    "stable-cascade/stage_b_lite.safetensors",
-    "stable-cascade/stage_b_lite_bf16.safetensors",
-    "stable-cascade/stage_c.safetensors",
-    "stable-cascade/stage_c_bf16.safetensors",
-    "stable-cascade/stage_c_lite.safetensors",
-    "stable-cascade/stage_c_lite_bf16.safetensors"
+    "flux1-dev.safetensors"
   ],
   "PHOTOMAKER": [
     "photomaker-v1.bin"
@@ -485,9 +466,6 @@
     "codeformer.pth",
     "GFPGANv1.3.pth",
     "GFPGANv1.4.pth",
-    "GPEN-BFR-1024.onnx",
-    "GPEN-BFR-2048.onnx",
-    "GPEN-BFR-512.onnx",
     "RestoreFormer.pth"
   ],
   "MMDETS": [
@@ -512,23 +490,10 @@
   "ULTRALYTICS": [
     "bbox/Eyes.pt",
     "bbox/face_yolov8m.pt",
-    "bbox/face_yolov8n.pt",
-    "bbox/face_yolov8n.pt",
-    "bbox/face_yolov8n_v2.pt",
-    "bbox/face_yolov8s.pt",
-    "bbox/hand_yolov8n.pt",
     "bbox/hand_yolov8s.pt",
-    "segm/deepfashion2_yolov8s-seg.pt",
-    "segm/face_yolov8m-seg_60.pt",
-    "segm/face_yolov8n-seg2_60.pt",
-    "segm/hair_yolov8n-seg_60.pt",
     "segm/hair_yolov8n-seg_60.pt",
     "segm/person_yolov8m-seg.pt",
-    "segm/person_yolov8n-seg.pt",
-    "segm/person_yolov8s-seg.pt",
-    "segm/skin_yolov8m-seg_400.pt",
-    "segm/skin_yolov8n-seg_400.pt",
-    "segm/skin_yolov8n-seg_800.pt"
+    "segm/deepfashion2_yolov8s.pt"
   ],
   "LAYER_MODEL": [
     "layer_sd15_bg2fg.safetensors",
@@ -599,7 +564,6 @@
     "v3_sd15_sparsectrl_scribble.ckpt"
   ],
   "ANIMATEDIFF_MOTION_LORA": [
-    "shatterAnimatediff_v10.safetensors",
     "v2_lora_PanLeft.ckpt",
     "v2_lora_PanRight.ckpt",
     "v2_lora_RollingAnticlockwise.ckpt",
@@ -618,21 +582,17 @@
     "warping_module.safetensors"
   ],
   "LLM": [
-    "checkpoints/chatglm3-4bit.safetensors",
-    "checkpoints/chatglm3-8bit.safetensors",
-    "checkpoints/chatglm3-fp16.safetensors"
+    "chatglm3-4bit.safetensors",
+    "chatglm3-8bit.safetensors",
+    "chatglm3-fp16.safetensors"
   ],
   "TENSORRT": [
     "dreamshaperXL_lightningDPMSDE_DYN_A40-b-1-1-1-h-512-1536-1024-w-512-1536-1024.engine",
     "sd3_medium_DYN_A100-b-1-1-1-h-512-1536-1024-w-512-1536-1024.engine",
-    "sd3_medium_DYN_A40-b-1-1-1-h-512-1536-1024-w-512-1536-1024.engine",
-    "sd3_medium_DYN_H100-b-1-1-1-h-512-1536-1024-w-512-1536-1024.engine"
+    "sd3_medium_DYN_A40-b-1-1-1-h-512-1536-1024-w-512-1536-1024.engine"
   ],
   "DIFFUSERS": [
     "Kolors"
-  ],
-  "ULTRAPIXEL": [
-    "ultrapixel_t2i.safetensors"
   ],
   "REMOVEBG": [
     "RMBG-1.4.pth"

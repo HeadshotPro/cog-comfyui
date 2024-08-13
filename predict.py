@@ -18,7 +18,7 @@ INPUT_DIR = "/tmp/inputs"
 COMFYUI_TEMP_OUTPUT_DIR = "ComfyUI/temp"
 ALL_DIRECTORIES = [OUTPUT_DIR, INPUT_DIR, COMFYUI_TEMP_OUTPUT_DIR]
 
-with open("workflows/02_upscale.json", "r") as file:
+with open("workflows/flux.json", "r") as file:
     EXAMPLE_WORKFLOW_JSON = file.read()
 
 
